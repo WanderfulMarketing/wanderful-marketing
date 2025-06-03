@@ -54,8 +54,8 @@
       color: var(--text);
       margin-left: 2rem;
       font-weight: 700;
-      transition: color 0.3s ease;
       text-transform: uppercase;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -90,19 +90,19 @@
       margin-top: 0.5rem;
     }
 
-    section {
+    .contact-section {
       max-width: 800px;
       margin: auto;
       padding: 4rem 2rem;
+      background-color: #fff;
     }
 
-   .contact-intro {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  text-align: center;
+    .contact-intro {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-align: center;
     }
-
 
     form {
       display: flex;
@@ -160,16 +160,18 @@
   <header>
     <div class="logo">WANDERFUL</div>
     <nav>
-      <a href="#">A propos</a>
+      <a href="#">A PROPOS</a>
     </nav>
   </header>
 
-  <div class="hero">
+  <!-- SECTION HERO -->
+  <section class="hero">
     <h1>WANDERFUL</h1>
     <h2>MARKETING</h2>
-  </div>
+  </section>
 
-  <section>
+  <!-- SECTION CONTACT -->
+  <section class="contact-section">
     <div class="contact-intro">Une question? Un projet? Contactez nous.</div>
 
     <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
