@@ -61,12 +61,27 @@
     }
 
     .hero {
+      position: relative;
       height: 90vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero-content {
+      z-index: 1;
     }
 
     h1 {
@@ -133,17 +148,12 @@
     }
 
     footer {
-      background-color: #f8f8f8;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem;
       font-size: 0.9rem;
-      color: #555;
-      margin-top: 4rem;
-    }
-
-    footer span {
-      color: var(--primary);
-      font-weight: 600;
+      color: #777;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
     }
 
     @media (max-width: 768px) {
@@ -172,13 +182,18 @@
   </header>
 
   <div class="hero">
-    <h1>WANDERFUL</h1>
-    <h2>MARKETING</h2>
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="aura.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+    <div class="hero-content">
+      <h1>WANDERFUL</h1>
+      <h2>MARKETING</h2>
+    </div>
   </div>
 
   <section>
     <div class="contact-intro">Une question? Un projet? Contactez nous.</div>
-
     <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
       <input type="text" name="name" placeholder="Votre nom" required>
       <input type="email" name="email" placeholder="Votre adresse e-mail" required>
@@ -188,7 +203,7 @@
   </section>
 
   <footer>
-    © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
+    © 2025 Wanderful Marketing. Tous droits réservés.
   </footer>
 
 </body>
