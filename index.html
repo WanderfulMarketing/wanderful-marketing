@@ -2,100 +2,121 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WANDERFUL MARKETING</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderful Marketing</title>
+
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-color: #d3abdd;
-      --secondary-color: #a6c4d2;
-      --accent-color: #6763b5;
-      --text-color: #000;
-      --font-body: 'Quicksand', sans-serif;
+      --violet-principal: #d3abdd;
+      --bleu-secondaire: #a6c4d2;
+      --bleu-foncé: #6763b5;
+      --noir: #000000;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: var(--font-body);
-      color: var(--text-color);
-      background-color: #fff;
-      padding-top: 80px; /* espace pour la barre fixe */
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: var(--noir);
+      overflow-x: hidden;
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: white;
+      border-bottom: 2px solid var(--violet-principal);
+      z-index: 999;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
     }
 
-    header .logo {
-      font-family: var(--font-body);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--main-color);
-      text-transform: uppercase;
+    .navbar-left {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: var(--noir);
     }
 
-    nav a {
-      margin-left: 2rem;
+    .navbar-right a {
+      margin-left: 1rem;
       text-decoration: none;
-      color: var(--text-color);
-      font-weight: 500;
-      font-family: var(--font-body);
+      color: var(--noir);
+      font-family: Arial, sans-serif;
     }
 
-    .hero {
-      height: 90vh;
+    .main-container {
+      margin-top: 100px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      background-color: #fff;
+      padding: 2rem;
     }
 
-    .hero h1 {
-      font-family: var(--font-body);
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--main-color);
+    .boxed {
+      background-color: var(--violet-principal);
+      padding: 4rem 2rem;
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.1;
+      max-width: 100%;
+      height: auto;
+      z-index: 0;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
       text-transform: uppercase;
     }
 
-    .hero h2 {
-      font-family: var(--font-body);
-      font-weight: 700;
+    .hero-text p {
+      font-family: Arial, sans-serif;
       font-size: 1.5rem;
-      color: var(--main-color);
-      margin-top: 0.5rem;
+      text-transform: uppercase;
+      margin-top: -10px;
     }
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .contact-intro {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      font-weight: 500;
+    .contact {
+      margin-top: 5rem;
       text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     form {
+      max-width: 600px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -103,45 +124,37 @@
 
     input, textarea {
       padding: 1rem;
-      font-family: var(--font-body);
-      font-size: 1rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      resize: none;
     }
 
     textarea {
-      resize: none;
+      height: 150px;
       overflow-y: auto;
     }
 
     button {
-      padding: 1rem;
-      font-family: var(--font-body);
-      font-size: 1rem;
-      background-color: var(--main-color);
+      background-color: var(--bleu-foncé);
       color: white;
       border: none;
-      border-radius: 4px;
+      padding: 1rem;
       cursor: pointer;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: var(--accent-color);
+      background-color: var(--noir);
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
+      .hero-text h1 {
+        font-size: 3rem;
       }
 
-      .hero h2 {
-        font-size: 1.1rem;
-      }
-
-      nav a {
-        margin-left: 1rem;
-        font-size: 0.9rem;
+      .hero-text p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -149,27 +162,33 @@
 <body>
 
   <header>
-    <div class="logo">WANDERFUL</div>
-    <nav>
-      <a href="#">À propos</a>
-    </nav>
+    <div class="navbar">
+      <div class="navbar-left"><a href="#">À propos</a></div>
+      <div class="navbar-right"><a href="#">WANDERFUL</a></div>
+    </div>
   </header>
 
-  <div class="hero">
-    <h1>WANDERFUL</h1>
-    <h2>MARKETING</h2>
-  </div>
+  <main class="main-container">
+    <div class="boxed">
+      <!-- Image personnalisée à placer ici -->
+      <img src="image.jpg" alt="Image fond" class="background-image" />
+      <div class="hero-text">
+        <h1>Wanderful</h1>
+        <p>Marketing</p>
+      </div>
+    </div>
+  </main>
 
-  <section>
-    <div class="contact-intro">Une question ? Un projet ? Contactez-nous.</div>
-
-    <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+  <section class="contact">
+    <h2>Une question ? Un projet ? Contactez-nous.</h2>
+    <form action="https://formspree.io/f/your_form_id" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre e-mail" required />
+      <textarea name="message" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
   </section>
 
 </body>
 </html>
+
