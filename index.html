@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WANDERFUL MARKETING</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #d3abdd;
       --secondary: #a6c4d2;
       --accent: #6763b5;
       --text: #000;
+      --font: 'Outfit', sans-serif;
     }
 
     * {
@@ -20,8 +21,8 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
+      font-family: var(--font);
+      background: #fff;
       color: var(--text);
       padding-top: 80px;
     }
@@ -30,61 +31,57 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      padding: 1rem 2rem;
+      background: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
 
     .logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 1.8rem;
       color: var(--primary);
-      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     nav a {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      color: var(--text);
+      font-family: var(--font);
       text-decoration: none;
+      color: var(--text);
       margin-left: 2rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
+      font-weight: 500;
     }
 
     .hero {
+      height: 90vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 90vh;
+      align-items: center;
       text-align: center;
     }
 
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
+    h1 {
+      font-family: var(--font);
       font-size: clamp(3rem, 10vw, 6rem);
       color: var(--primary);
+      font-weight: 700;
       letter-spacing: 0.1em;
-      margin: 0;
       text-transform: uppercase;
     }
 
-    .hero h2 {
-      font-family: 'Bebas Neue', sans-serif;
+    h2 {
+      font-family: var(--font);
       font-size: clamp(1rem, 2vw, 1.5rem);
       color: var(--primary);
-      margin-top: 0.5rem;
+      font-weight: 400;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      font-weight: 400;
+      margin-top: 0.5rem;
     }
 
     section {
@@ -94,10 +91,10 @@
     }
 
     .contact-intro {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 2rem;
-      text-align: center;
       font-weight: 500;
+      text-align: center;
     }
 
     form {
@@ -107,11 +104,11 @@
     }
 
     input, textarea {
+      font-family: var(--font);
       padding: 1rem;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 4px;
-      font-family: Arial, sans-serif;
     }
 
     textarea {
@@ -121,13 +118,14 @@
 
     button {
       padding: 1rem;
+      font-family: var(--font);
+      font-size: 1rem;
       background-color: var(--primary);
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s;
+      transition: background 0.3s ease;
     }
 
     button:hover {
@@ -135,22 +133,17 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
       }
 
       nav a {
-        margin-left: 0;
-        margin-top: 0.5rem;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-      }
-
-      .hero h2 {
-        font-size: 1rem;
+        margin-left: 1rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -175,10 +168,11 @@
     <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
       <input type="text" name="name" placeholder="Votre nom" required>
       <input type="email" name="email" placeholder="Votre adresse e-mail" required>
-      <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
   </section>
 
 </body>
 </html>
+
