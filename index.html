@@ -5,65 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wanderful Marketing</title>
   <style>
-    :root {
-      --primary: #d3abdd;
-      --bg: #fff;
-      --text: #111;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #111;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
       text-align: center;
     }
 
-    .container {
+    .content {
       max-width: 500px;
       padding: 2rem;
     }
 
     h1 {
-      font-size: 2.5rem;
+      color: #d3abdd;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: var(--primary);
-      font-weight: 600;
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--text);
-    }
-
-    .dot {
-      height: 12px;
-      width: 12px;
-      background-color: var(--primary);
-      border-radius: 50%;
-      display: inline-block;
-      animation: pulse 1.5s infinite;
-      margin-left: 0.5rem;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.5); opacity: 0.5; }
-      100% { transform: scale(1); opacity: 1; }
+      color: #111;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="content">
     <h1>Wanderful Marketing</h1>
-    <p>Notre site est actuellement en construction<span class="dot"></span><br>
-    Revenez bientôt pour découvrir notre univers !</p>
+    <p>Notre site est en construction.<br>Revenez bientôt pour découvrir notre univers.</p>
   </div>
 </body>
 </html>
