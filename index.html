@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wanderful Marketing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <title>WANDERFUL MARKETING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --violet: #d3abdd;
-      --blue: #a6c4d2;
-      --deep-purple: #6763b5;
-      --black: #000000;
-      --white: #ffffff;
+      --main-color: #d3abdd;
+      --secondary-color: #a6c4d2;
+      --accent-color: #6763b5;
+      --text-color: #000;
+      --font-title: 'Anton', sans-serif;
+      --font-body: 'Quicksand', sans-serif;
     }
 
     * {
@@ -21,108 +22,133 @@
     }
 
     body {
-      font-family: 'Outfit', sans-serif;
-      background-color: var(--white);
-      color: var(--black);
+      font-family: var(--font-body);
+      color: var(--text-color);
+      background-color: #fff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header.sticky {
       display: flex;
-      flex-direction: column;
+    }
+
+    header .logo {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: var(--main-color);
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
-    .header {
+      flex-direction: column;
       text-align: center;
-      margin-bottom: 3rem;
+      background-color: #fff;
     }
 
-    .logo {
-      font-family: 'Outfit', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--violet);
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      color: var(--main-color);
     }
 
-    .subtitle {
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      color: var(--violet);
-      margin-top: 0.5rem;
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact-intro {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      text-align: center;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    label {
-      margin: 0.5rem 0 0.2rem;
-      font-weight: 600;
+      gap: 1rem;
     }
 
     input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--font-body);
       font-size: 1rem;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     button {
-      margin-top: 1.5rem;
-      background-color: var(--violet);
-      color: var(--white);
-      border: none;
-      padding: 0.8rem;
-      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--font-body);
       font-size: 1rem;
+      background-color: var(--main-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
 
     button:hover {
-      background-color: var(--deep-purple);
+      background-color: var(--accent-color);
     }
 
-    footer {
-      margin-top: 4rem;
-      font-size: 0.8rem;
-      color: var(--blue);
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="logo">WANDERFUL</div>
-    <div class="subtitle">MARKETING</div>
+
+  <header id="mainHeader">
+    <div class="logo">WANDERFUL MARKETING</div>
+  </header>
+
+  <div class="hero">
+    <h1>WANDERFUL<br>MARKETING</h1>
   </div>
 
-  <form action="https://formsubmit.co/contact@wanderful-marketing.com" method="POST">
-    <label for="name">Nom</label>
-    <input type="text" id="name" name="name" required>
+  <section>
+    <div class="contact-intro">Une question ? Un projet ? Contactez-nous.</div>
 
-    <label for="email">Adresse e-mail</label>
-    <input type="email" id="email" name="email" required>
+    <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
+  <script>
+    // Effet sticky du header
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
+  </script>
 
-    <!-- Protection anti-spam de formsubmit.co -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <button type="submit">Envoyer</button>
-  </form>
-
-  <footer>
-    &copy; 2025 Wanderful Marketing. Tous droits réservés.
-  </footer>
 </body>
 </html>
