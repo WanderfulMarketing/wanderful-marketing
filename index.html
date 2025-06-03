@@ -41,7 +41,6 @@
     }
 
     .logo {
-      font-family: var(--font);
       font-weight: 700;
       font-size: 1.8rem;
       color: var(--primary);
@@ -49,7 +48,6 @@
     }
 
     nav a {
-      font-family: var(--font);
       text-decoration: none;
       color: var(--text);
       margin-left: 2rem;
@@ -72,7 +70,6 @@
     }
 
     h1 {
-      font-family: var(--font);
       font-size: clamp(3rem, 10vw, 6rem);
       color: var(--primary);
       font-weight: 700;
@@ -81,7 +78,6 @@
     }
 
     h2 {
-      font-family: var(--font);
       font-size: clamp(1rem, 2vw, 1.5rem);
       color: var(--primary);
       font-weight: 400;
@@ -90,11 +86,10 @@
       margin-top: 0.5rem;
     }
 
-    .contact-section {
+    section {
       max-width: 800px;
       margin: auto;
       padding: 4rem 2rem;
-      background-color: #fff;
     }
 
     .contact-intro {
@@ -111,7 +106,6 @@
     }
 
     input, textarea {
-      font-family: var(--font);
       padding: 1rem;
       font-size: 1rem;
       border: 1px solid #ccc;
@@ -125,7 +119,6 @@
 
     button {
       padding: 1rem;
-      font-family: var(--font);
       font-size: 1rem;
       background-color: var(--primary);
       color: white;
@@ -137,6 +130,20 @@
 
     button:hover {
       background-color: var(--accent);
+    }
+
+    footer {
+      background-color: #f8f8f8;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4rem;
+    }
+
+    footer span {
+      color: var(--primary);
+      font-weight: 600;
     }
 
     @media (max-width: 768px) {
@@ -164,14 +171,12 @@
     </nav>
   </header>
 
-  <!-- SECTION HERO -->
-  <section class="hero">
+  <div class="hero">
     <h1>WANDERFUL</h1>
     <h2>MARKETING</h2>
-  </section>
+  </div>
 
-  <!-- SECTION CONTACT -->
-  <section class="contact-section">
+  <section>
     <div class="contact-intro">Une question? Un projet? Contactez nous.</div>
 
     <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
@@ -182,6 +187,9 @@
     </form>
   </section>
 
+  <footer>
+    © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
+  </footer>
+
 </body>
 </html>
-
