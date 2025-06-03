@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WANDERFUL MARKETING</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@500;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --main-color: #d3abdd;
@@ -34,21 +34,37 @@
       background-color: #fff;
       padding: 1rem 2rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      display: none;
+      display: flex;
       justify-content: space-between;
       align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
       z-index: 1000;
     }
 
-    header.sticky {
-      display: flex;
+    header:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    body:hover header {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     header .logo {
       font-family: var(--font-title);
       font-size: 1.5rem;
       color: var(--main-color);
-      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      font-family: var(--font-body);
     }
 
     .hero {
@@ -65,6 +81,14 @@
       font-family: var(--font-title);
       font-size: 4rem;
       color: var(--main-color);
+    }
+
+    .hero h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--main-color);
+      margin-top: 0.5rem;
     }
 
     section {
@@ -94,6 +118,11 @@
       border-radius: 4px;
     }
 
+    textarea {
+      resize: none;
+      overflow-y: auto;
+    }
+
     button {
       padding: 1rem;
       font-family: var(--font-body);
@@ -114,17 +143,30 @@
       .hero h1 {
         font-size: 2.5rem;
       }
+
+      .hero h2 {
+        font-size: 1rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header id="mainHeader">
-    <div class="logo">WANDERFUL MARKETING</div>
+  <header>
+    <div class="logo">WANDERFUL</div>
+    <nav>
+      <a href="#">À propos</a>
+    </nav>
   </header>
 
   <div class="hero">
-    <h1>WANDERFUL<br>MARKETING</h1>
+    <h1>WANDERFUL</h1>
+    <h2>MARKETING</h2>
   </div>
 
   <section>
@@ -137,18 +179,6 @@
       <button type="submit">Envoyer</button>
     </form>
   </section>
-
-  <script>
-    // Effet sticky du header
-    const header = document.getElementById('mainHeader');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('sticky');
-      } else {
-        header.classList.remove('sticky');
-      }
-    });
-  </script>
 
 </body>
 </html>
