@@ -2,80 +2,68 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wanderful Marketing</title>
   <style>
     :root {
-      --main-color: #d3abdd;
-      --accent-1: #a6c4d2;
-      --accent-2: #6763b5;
-      --text: #111;
+      --primary: #d3abdd;
       --bg: #fff;
+      --text: #111;
     }
 
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
+      padding: 0;
       background: var(--bg);
       color: var(--text);
+      font-family: 'Helvetica Neue', sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
       padding: 2rem;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
     h1 {
-      font-size: 3rem;
-      color: var(--main-color);
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
       color: var(--text);
-      max-width: 600px;
     }
 
-    .badge {
-      background: var(--accent-2);
-      color: white;
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      margin-top: 1rem;
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: var(--primary);
+      border-radius: 50%;
       display: inline-block;
+      animation: pulse 1.5s infinite;
+      margin-left: 0.5rem;
     }
 
-    footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Wanderful Marketing</h1>
-    <p>Ce site est en construction.<br>Revenez bientôt pour découvrir notre univers coloré et stratégique.</p>
-    <span class="badge">Prochainement</span>
-  </header>
-  <footer>&copy; 2025 Wanderful Marketing — Tous droits réservés</footer>
+    <p>Notre site est actuellement en construction<span class="dot"></span><br>
+    Revenez bientôt pour découvrir notre univers !</p>
+  </div>
 </body>
 </html>
