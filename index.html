@@ -2,44 +2,73 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wanderful Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderful Marketing – Site en construction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --primary: #d3abdd;
+      --secondary: #a6c4d2;
+      --accent: #6763b5;
+      --text: #000000;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #111;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       display: flex;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 2rem;
       text-align: center;
     }
 
-    .content {
-      max-width: 500px;
-      padding: 2rem;
-    }
-
     h1 {
-      color: #d3abdd;
-      font-size: 2.2rem;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       margin-bottom: 1rem;
     }
 
+    .line {
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+      border-radius: 3px;
+      margin: 1rem 0;
+    }
+
     p {
-      font-size: 1.1rem;
-      color: #111;
-      margin: 0;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.6;
+      max-width: 480px;
+      color: var(--text);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--secondary);
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Wanderful Marketing</h1>
-    <p>Notre site est en construction.<br>Revenez bientôt pour découvrir notre univers.</p>
-  </div>
+  <h1>Wanderful Marketing</h1>
+  <div class="line"></div>
+  <p>Notre site est actuellement en construction.<br>Nous préparons quelque chose de beau, minimaliste et inspiré.</p>
+  <footer>© 2025 Wanderful Marketing</footer>
 </body>
 </html>
