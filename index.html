@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WANDERFUL MARKETING</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --main-color: #d3abdd;
       --secondary-color: #a6c4d2;
       --accent-color: #6763b5;
       --text-color: #000;
-      --font-title: 'Anton', sans-serif;
       --font-body: 'Quicksand', sans-serif;
     }
 
@@ -25,6 +24,7 @@
       font-family: var(--font-body);
       color: var(--text-color);
       background-color: #fff;
+      padding-top: 80px; /* espace pour la barre fixe */
     }
 
     header {
@@ -37,26 +37,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
       z-index: 1000;
     }
 
-    header:hover {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    body:hover header {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
     header .logo {
-      font-family: var(--font-title);
-      font-size: 1.5rem;
+      font-family: var(--font-body);
+      font-size: 1.8rem;
+      font-weight: 700;
       color: var(--main-color);
+      text-transform: uppercase;
     }
 
     nav a {
@@ -68,7 +57,7 @@
     }
 
     .hero {
-      height: 100vh;
+      height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,9 +67,11 @@
     }
 
     .hero h1 {
-      font-family: var(--font-title);
+      font-family: var(--font-body);
       font-size: 4rem;
+      font-weight: 700;
       color: var(--main-color);
+      text-transform: uppercase;
     }
 
     .hero h2 {
@@ -145,7 +136,7 @@
       }
 
       .hero h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       nav a {
