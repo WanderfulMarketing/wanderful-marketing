@@ -1,38 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wanderful Marketing</title>
   <style>
+    :root {
+      --main-color: #d3abdd;
+      --accent-1: #a6c4d2;
+      --accent-2: #6763b5;
+      --text: #111;
+      --bg: #fff;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
     }
+
     header {
-      font-size: 2em;
-      margin-bottom: 10px;
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    section {
+
+    h1 {
+      font-size: 3rem;
+      color: var(--main-color);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var(--text);
       max-width: 600px;
-      margin: auto;
     }
+
+    .badge {
+      background: var(--accent-2);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
+      margin-top: 4rem;
+      font-size: 0.9rem;
       color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>Bienvenue sur Wanderful Marketing</header>
-  <section>
-    <p>Ce site est en construction. Restez connectés !</p>
-    <p>Contact : <a href="mailto:hello@wanderful-marketing.com">hello@wanderful-marketing.com</a></p>
-  </section>
-  <footer>&copy; 2025 Wanderful Marketing</footer>
+  <header>
+    <h1>Wanderful Marketing</h1>
+    <p>Ce site est en construction.<br>Revenez bientôt pour découvrir notre univers coloré et stratégique.</p>
+    <span class="badge">Prochainement</span>
+  </header>
+  <footer>&copy; 2025 Wanderful Marketing — Tous droits réservés</footer>
 </body>
 </html>
