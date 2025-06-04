@@ -10,63 +10,6 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     
     body{font-family:var(--font);background:#fff;color:var(--text);}
-
-.hamburger {
-  width: 28px;
-  height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.hamburger span {
-  display: block;
-  height: 1.5px; /* traits plus fins */
-  width: 100%;
-  background-color: var(--text); /* noir par défaut */
-  border-radius: 2px;
-}
-
-    .hamburger:hover span {
-  background-color: var(--accent); 
-}
-
-
-    .menu {
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 1rem;
-  display: none;
-  flex-direction: column;
-}
-
-.menu li {
-  margin: 0.5rem 0;
-}
-
-.menu a {
-  text-decoration: none;
-  color: var(--text);
-  font-family: var(--font);
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-}
-
-.menu a:hover {
-  color: var(--accent);
-}
-    nav {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
     
     header{position:fixed;top:0;width:100%;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);z-index:1000;}
     
@@ -118,29 +61,13 @@
       h1{font-size:2.5rem;}
       h2{font-size:1.2rem;}
       nav a{margin-left:1rem;font-size:0.9rem;}
-
-nav a {
-  display: none;
-}
-
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">WANDERFUL</div>
-    <nav>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul class="menu" id="menu">
-    <li><a href="#a-propos">A PROPOS</a></li>
-  </ul>
-</nav>
-
-    </nav>
+    <nav><a href="#a-propos">A PROPOS</a></nav>
   </header>
 
   <section class="hero">
@@ -184,25 +111,5 @@ nav a {
   <footer>
     © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
   </footer>
-  
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-
-  hamburger.addEventListener('click', () => {
-    const isOpen = menu.style.display === 'flex';
-    menu.style.display = isOpen ? 'none' : 'flex';
-  });
-
-  // Fermer le menu quand on clique sur un lien
-  const menuLinks = menu.querySelectorAll('a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.style.display = 'none';
-    });
-  });
-</script>
-
-
 </body>
 </html>
