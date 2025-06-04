@@ -61,6 +61,10 @@
     nav a:hover {
       color: var(--accent);
     }
+    
+html {
+  scroll-behavior: smooth;
+}
 
     .hero {
       height: 100vh;
@@ -94,7 +98,7 @@
     }
 
 .about-section {
-  padding: 6rem 2rem;         /* Plus de hauteur verticale */
+  padding: 4rem 2rem;         /* Plus de hauteur verticale */
   margin-top: 4rem;           /* Espace avec la section précédente */
   background-color: #fff;     /* Fond bien blanc */
 }
@@ -249,7 +253,7 @@
   <header>
     <div class="logo">WANDERFUL</div>
     <nav>
-      <a href="#">A PROPOS</a>
+      <a href="#a-propos">A PROPOS</a>
     </nav>
   </header>
 
@@ -265,7 +269,7 @@
   </section>
 
   <!-- SECTION À PROPOS -->
-<section class="about-section">
+<section class="about-section" id="a-propos">
   <div class="about-container">
     <h3>Qui sommes-nous ?</h3>
     <p>
