@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wanderful | Marketing Agency</title>
+  <title>Wanderful Marketing</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  
   <style>
     :root {
       --primary: #d3abdd;
@@ -43,17 +41,12 @@
     }
 
     .logo {
-  display: flex;
-  align-items: center;
-  height: 50px;
-}
-    
-.logo-img {
-  height: 100%;
-  max-height: 50px;
-  object-fit: contain;
-}
-
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
 
     nav a {
       font-family: var(--font);
@@ -78,7 +71,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      padding-top: 80px;
+      padding-top: 80px; /* pour laisser la place à la navbar fixe */
     }
 
     h1 {
@@ -100,10 +93,10 @@
       margin-top: 0.5rem;
     }
 
-   .about-section {
-  padding: 6rem 2rem;       
-  margin-top: 4rem;           
-  background-color: #fff;     
+.about-section {
+  padding: 6rem 2rem;         /* Plus de hauteur verticale */
+  margin-top: 4rem;           /* Espace avec la section précédente */
+  background-color: #fff;     /* Fond bien blanc */
 }
 
 .about-container {
@@ -115,7 +108,7 @@
 .about-container h3 {
   font-family: var(--font);
   font-size: 2rem;
-  color: var(--primary);      
+  color: var(--primary);      /* Violet clair */
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -127,6 +120,7 @@
   color: var(--text);
   line-height: 1.8;
 }
+
 
     .contact-section {
       max-width: 800px;
@@ -186,7 +180,7 @@
       object-fit: cover;
       z-index: -1;
       opacity: 0.5;
-      filter: blur(4px);
+      filter: blur(4px); /* effet de flou */
     }
 
     .hero-text {
@@ -227,9 +221,7 @@
 <body>
 
   <header>
-    <div class="logo">
-  <img src="logo.png" alt="Wanderful Logo" class="logo-img">
-</div>
+    <div class="logo">WANDERFUL</div>
     <nav>
       <a href="#">A PROPOS</a>
     </nav>
@@ -242,7 +234,7 @@
     </video>
     <div class="hero-text">
       <h1>WANDERFUL</h1>
-      <h2>MARKETING AGENCY</h2>
+      <h2>MARKETING</h2>
     </div>
   </section>
 
@@ -251,7 +243,7 @@
   <div class="about-container">
     <h3>Qui sommes-nous ?</h3>
     <p>
-      Wanderful est une agence créative spécialisée dans le marketing digital, le branding et la stratégie de contenu. Nous aidons les marques à se connecter à leur public à travers des expériences authentiques, des visuels percutants et une communication alignée avec leurs valeurs.
+      Wanderful Marketing est une agence créative spécialisée dans le marketing digital, le branding et la stratégie de contenu. Nous aidons les marques à se connecter à leur public à travers des expériences authentiques, des visuels percutants et une communication alignée avec leurs valeurs.
     </p>
   </div>
 </section>
@@ -268,8 +260,9 @@
   </section>
 
   <footer>
-    © 2025 <span>Wanderful</span> — Tous droits réservés
+    © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
   </footer>
 
 </body>
 </html>
+
