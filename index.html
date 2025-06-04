@@ -12,22 +12,27 @@
     body{font-family:var(--font);background:#fff;color:var(--text);}
 
 .hamburger {
+  width: 28px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
   cursor: pointer;
-  margin-left: 2rem;
+  z-index: 1100;
 }
 
 .hamburger span {
-  height: 2px;
+  display: block;
+  height: 1.5px; /* traits plus fins */
   width: 100%;
-  background: var(--text);
+  background-color: var(--text); /* noir par défaut */
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
+
+    .hamburger:hover span {
+  background-color: var(--accent); 
+}
+
 
     .menu {
   list-style: none;
