@@ -148,7 +148,7 @@
       font-weight: 600;
     }
 
-    /* Responsive */
+    /* Responsive : ordre forcé pour mobile */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -173,12 +173,17 @@
         margin-top: 6rem;
       }
 
-      .contact-left h2 {
-        font-size: 1.4rem;
+      .contact-left {
+        order: 1;
       }
 
       form {
+        order: 2;
         width: 100%;
+      }
+
+      .contact-left h2 {
+        font-size: 1.4rem;
       }
 
       input, textarea {
