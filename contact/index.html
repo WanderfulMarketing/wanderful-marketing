@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wanderful | Marketing Agency</title>
+  <title>Contact | Marketing Agency</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -71,93 +71,6 @@
       scroll-behavior: smooth;
     }
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 80px; /* espace sous header */
-    }
-
-    h1 {
-      font-size: clamp(3rem, 10vw, 6rem);
-      color: var(--primary);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-family: var(--font);
-    }
-
-    h2 {
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      color: var(--primary);
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-top: 0.5rem;
-      font-family: var(--font);
-    }
-
-    .about-section {
-      padding: 4rem 2rem;
-      margin-top: 4rem;
-      background-color: #fff;
-    }
-
-    .about-container {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about-container h3 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-family: var(--font);
-    }
-
-    .about-container p {
-      font-size: 1.1rem;
-      color: var(--text);
-      line-height: 1.8;
-      font-family: var(--font);
-    }
-
-    .trust-section {
-      padding: 6rem 2rem;
-      background-color: #fff;
-      margin-top: 1rem;
-    }
-
-    .trust-container {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .trust-container h3 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-family: var(--font);
-    }
-
-    .trust-container p {
-      font-size: 1.1rem;
-      color: var(--text);
-      line-height: 1.8;
-      font-family: var(--font);
-    }
-
     /* Section contact corrigée pour espacement et taille */
     main.contact-section {
       max-width: 800px;
@@ -208,23 +121,6 @@
       background-color: var(--accent);
     }
 
-    .background-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 0.5;
-      filter: blur(4px);
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-    }
-
     footer {
       background-color: #f8f8f8;
       text-align: center;
@@ -263,35 +159,6 @@
       <a href="/contact">CONTACT</a>
     </nav>
   </header>
-
-  <section class="hero">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="aura.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-text">
-      <h1>WANDERFUL</h1>
-      <h2>MARKETING AGENCY</h2>
-    </div>
-  </section>
-
-  <section class="about-section" id="a-propos">
-    <div class="about-container">
-      <h3>Qui sommes-nous ?</h3>
-      <p>
-        Wanderful Marketing est une agence créative spécialisée dans le marketing digital, le branding et la stratégie de contenu. Nous aidons les marques à se connecter à leur public à travers des expériences authentiques, des visuels percutants et une communication alignée avec leurs valeurs.
-      </p>
-    </div>
-  </section>
-
-  <section class="trust-section">
-    <div class="trust-container">
-      <h3>Pourquoi nous faire confiance ?</h3>
-      <p>
-        Notre équipe est jeune, dynamique et profondément ancrée dans les tendances actuelles. Formée dans les meilleures écoles de management et de marketing, elle allie fraîcheur, créativité et expertise stratégique. Connectée, réactive et tournée vers l'avenir, notre agence comprend les codes des générations actuelles et crée des campagnes qui résonnent vraiment.
-      </p>
-    </div>
-  </section>
-
   <main class="contact-section">
     <div class="contact-intro">Une question? Un projet? Contactez nous.</div>
     <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
