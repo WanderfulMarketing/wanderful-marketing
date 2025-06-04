@@ -6,16 +6,57 @@
 <title>Contact | Wanderful Marketing</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
 <style>
+  :root {
+    --primary: #d3abdd;
+    --text: #000;
+    --font: 'Outfit', sans-serif;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   body {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font);
     background: #fff;
-    color: #000;
+    color: var(--text);
     max-width: 600px;
-    margin: 2rem auto;
+    margin: 80px auto 2rem; /* 80px pour laisser place au header fixe */
     padding: 0 1rem;
   }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .logo {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary);
+    text-transform: uppercase;
+  }
+  nav a {
+    font-family: var(--font);
+    text-decoration: none;
+    color: var(--text);
+    margin-left: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: var(--primary);
+  }
   h1 {
-    color: #d3abdd;
+    color: var(--primary);
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -27,7 +68,7 @@
     gap: 1rem;
   }
   input, textarea {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font);
     padding: 1rem;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -39,9 +80,9 @@
   }
   button {
     padding: 1rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font);
     font-size: 1rem;
-    background-color: #d3abdd;
+    background-color: var(--primary);
     color: white;
     border: none;
     border-radius: 4px;
@@ -49,4 +90,43 @@
     transition: background 0.3s ease;
   }
   button:hover {
-    background
+    background-color: #6763b5; /* accent */
+  }
+  footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 4rem;
+  }
+  footer span {
+    color: var(--primary);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">WANDERFUL</div>
+    <nav>
+      <a href="index.html#a-propos">A PROPOS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contactez-nous</h1>
+    <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required />
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
+  </footer>
+</body>
+</html>
