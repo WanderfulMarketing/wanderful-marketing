@@ -25,12 +25,19 @@
     .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding-top:80px;}
 
     .hero-logo {
-  max-width: 80vw;
-  max-height: 25vh;
+  max-width: 90vw;
+  max-height: 40vh;
   height: auto;
   width: auto;
   display: block;
   margin: 0 auto;
+}
+
+    @media (max-width: 600px) {
+  .hero-logo {
+    max-width: 80vw;
+    max-height: 30vh;
+  }
 }
     
     h1{font-family:var(--font);font-size:clamp(3rem,10vw,6rem);color:var(--primary);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
