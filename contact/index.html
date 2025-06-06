@@ -22,15 +22,17 @@
     }
 
     html, body {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
       font-family: var(--font);
       background: #fff;
       color: var(--text);
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     header {
+      height: 60px;
       position: fixed;
       top: 0;
       width: 100%;
@@ -38,17 +40,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0 2rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
 
     .logo {
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--primary);
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+      vertical-align: middle;
+      margin-top: -1px;
     }
 
     nav a {
@@ -83,12 +91,14 @@
 
     .contact-left h2 {
       font-size: 1.6rem;
-      color: #000;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
     .contact-left p {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .social-icons {
@@ -109,15 +119,14 @@
       filter: none;
     }
 
-   input, textarea {
-  padding: 1rem;
-  font-size: 1rem;
-  font-family: var(--font);
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-}
-
+    input, textarea {
+      padding: 1rem;
+      font-size: 1rem;
+      font-family: var(--font);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
 
     textarea {
       resize: none;
@@ -126,6 +135,7 @@
     button {
       padding: 1rem;
       font-size: 1rem;
+      font-family: var(--font);
       background-color: var(--primary);
       color: white;
       border: none;
@@ -144,7 +154,7 @@
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #555;
-      margin-top: auto;
+      margin-top: 4rem;
     }
 
     footer span {
@@ -152,38 +162,16 @@
       font-weight: 600;
     }
 
-    /* Responsive : ordre forcé pour mobile */
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-      }
-
-      nav {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
       nav a {
-        margin-left: 0;
+        margin-left: 1rem;
+        font-size: 0.9rem;
       }
 
       main.contact-section {
         flex-direction: column;
         padding: 1.5rem 1rem;
         margin-top: 6rem;
-      }
-
-      .contact-left {
-        order: 1;
-      }
-
-      form {
-        order: 2;
-        width: 100%;
       }
 
       .contact-left h2 {
@@ -195,9 +183,13 @@
       }
     }
 
-    @media(max-width: 480px) {
-      .logo {
-        font-size: 1.5rem;
+    @media(max-width: 600px) {
+      header {
+        height: 50px;
+      }
+
+      .nav-logo {
+        height: 35px;
       }
 
       .contact-left h2 {
@@ -214,8 +206,8 @@
 <body>
   <header>
     <a href="/" class="logo">
-  <img src="../Icon.svg" alt="Wanderful Logo" style="height: 40px;" />
-</a>
+      <img src="/Icon.svg" alt="Logo Wanderful" class="nav-logo">
+    </a>
     <nav>
       <a href="/#a-propos">A PROPOS</a>
       <a href="/contact">CONTACT</a>
@@ -226,22 +218,22 @@
     <div class="contact-left">
       <h2>Une question ? Un projet ? Contactez nous.</h2>
       <p>Nous répondons à vos questions du Lundi au Samedi de 10h à 17h.</p>
-      <p>N'hésitez pas à nous suivre sur les réseaux !</p>
+      <p>N'hésitez pas à nous suivre sur les réseaux :</p>
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/tonprofil1" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn 1" />
+        <a href="https://www.linkedin.com/in/tonprofil" target="_blank" rel="noopener">
+          <img src="linkedin-icon.svg" alt="LinkedIn">
         </a>
-        <a href="https://www.linkedin.com/in/tonprofil2" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn 2" />
+        <a href="https://www.instagram.com/tonprofil" target="_blank" rel="noopener">
+          <img src="instagram-icon.svg" alt="Instagram">
         </a>
       </div>
     </div>
 
     <form action="https://formspree.io/f/TON_CODE_FORM" method="POST">
-      <input type="text" name="nom" placeholder="Votre nom" required />
-      <input type="text" name="prenom" placeholder="Votre prénom" required />
-      <input type="email" name="email" placeholder="Votre adresse e-mail" required />
-      <input type="text" name="sujet" placeholder="Votre sujet" required />
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="text" name="prenom" placeholder="Votre prénom" required>
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+      <input type="text" name="sujet" placeholder="Votre sujet" required>
       <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
