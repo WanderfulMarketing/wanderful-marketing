@@ -12,7 +12,7 @@
     
     body{font-family:var(--font);background:#fff;color:var(--text);}
     
-    header{position:fixed;top:0;width:100%;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);z-index:1000;}
+    header{height: 60px;position:fixed;top:0;width:100%;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);z-index:1000;}
     
     .logo {
   display: flex;
@@ -85,16 +85,20 @@
     }
     
 .nav-logo {
-  height: 2.2rem;
+  height: 50px;
   width: auto;
   display: block;
   vertical-align: middle;
   margin-top: -5px; /* ajuste ici si besoin */
 }
     
-@media (max-width: 600px) {
+@media (max-width: 600px) 
+    {
+  header {
+    height: 50px; /* plus petit sur mobile */
+  }{
   .nav-logo {
-    height: 1.8rem;
+    height: 40px;
   }
 }
 
