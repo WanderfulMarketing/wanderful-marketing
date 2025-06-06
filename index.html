@@ -140,7 +140,11 @@
   position: relative;
   z-index: 2;  /* devant les étoiles */
 }
-
+@media(min-width: 769px) {
+  .magic-phrase p {
+    font-size: 3rem; /* taille plus grande pour desktop */
+  }
+}
 
 @keyframes fadeInOut {
   0% {
