@@ -80,11 +80,19 @@
       h2{font-size:1.2rem;}
       nav a{margin-left:1rem;font-size:0.9rem;}
     }
+    
 .nav-logo {
-  height: 1.8rem; /* même hauteur que le texte .logo */
+  height: 2.5rem; /* plus grand que 1.8rem */
   width: auto;
   display: block;
 }
+    
+@media (max-width: 600px) {
+  .nav-logo {
+    height: 1.8rem; /* légèrement réduit sur mobile */
+  }
+}
+
   </style>
 </head>
 <body>
