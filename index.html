@@ -162,12 +162,14 @@
 }
     
 .sparkle {
-  color: #333;
-  font-size: 0.8rem;
+  position: absolute;
+  color: #000; /* noir neutre */
+  font-size: 1rem;
   opacity: 0;
-  animation: sparkle-pop 3s ease-in-out infinite;
+  animation: sparkle-pop 4s ease-in-out infinite;
   pointer-events: none;
 }
+
 
 
 @keyframes sparkle-pop {
@@ -194,7 +196,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px; /* ou adapte à ce que tu veux */
 }
+
 
   </style>
 </head>
@@ -270,21 +274,21 @@ Rejoignez l’aventure Wanderful et embarquez avec nous pour faire accroître vo
 
   <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const wrapper = document.querySelector(".magic-wrapper");
+  const wrapper = document.querySelector(".magic-wrapper");
 
-    for (let i = 0; i < 20; i++) {
-      const sparkle = document.createElement("div");
-      sparkle.className = "sparkle";
-      sparkle.textContent = Math.random() > 0.5 ? "☆" : "☆";
+  for (let i = 0; i < 15; i++) {
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+    sparkle.textContent = "☆"; // forme étoile vide
 
-      // Positionnement aléatoire autour du texte
-      sparkle.style.top = `${Math.random() * 100}%`;
-      sparkle.style.left = `${Math.random() * 100}%`;
-      sparkle.style.animationDelay = `${Math.random() * 3}s`;
+    sparkle.style.top = `${Math.random() * 100}%`;
+    sparkle.style.left = `${Math.random() * 100}%`;
+    sparkle.style.animationDelay = `${Math.random() * 5}s`;
 
-      wrapper.appendChild(sparkle);
-    }
-  });
+    wrapper.appendChild(sparkle);
+  }
+});
+
 </script>
 
 </body>
