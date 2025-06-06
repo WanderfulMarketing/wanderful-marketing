@@ -15,8 +15,11 @@
     header{position:fixed;top:0;width:100%;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);z-index:1000;}
     
     .logo {
-  display: block;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
+
     nav a{font-family:var(--font);text-decoration:none;color:var(--text);margin-left:2rem;font-weight:700;text-transform:uppercase;transition:color 0.3s ease;}
     
     nav a:hover{color:var(--accent);}
@@ -82,16 +85,18 @@
     }
     
 .nav-logo {
-  height: 2.5rem; /* plus grand que 1.8rem */
+  height: 2.2rem;
   width: auto;
   display: block;
+  vertical-align: middle;
 }
     
 @media (max-width: 600px) {
   .nav-logo {
-    height: 1.8rem; /* légèrement réduit sur mobile */
+    height: 1.8rem;
   }
 }
+
 
   </style>
 </head>
