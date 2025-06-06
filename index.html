@@ -162,13 +162,13 @@
 }
     
 .sparkle {
-  position: absolute;
+  color: #333;
   font-size: 0.8rem;
-  color: var(--primary);
   opacity: 0;
   animation: sparkle-pop 3s ease-in-out infinite;
   pointer-events: none;
 }
+
 
 @keyframes sparkle-pop {
   0% {
@@ -275,7 +275,7 @@ Rejoignez l’aventure Wanderful et embarquez avec nous pour faire accroître vo
     for (let i = 0; i < 20; i++) {
       const sparkle = document.createElement("div");
       sparkle.className = "sparkle";
-      sparkle.textContent = Math.random() > 0.5 ? "✨" : "⭐";
+      sparkle.textContent = Math.random() > 0.5 ? "☆" : "☆";
 
       // Positionnement aléatoire autour du texte
       sparkle.style.top = `${Math.random() * 100}%`;
