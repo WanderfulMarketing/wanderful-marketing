@@ -140,11 +140,7 @@
   position: relative;
   z-index: 2;  /* devant les étoiles */
 }
-@media(min-width: 769px) {
-  .magic-phrase p {
-    font-size: 3rem; /* taille plus grande pour desktop */
-  }
-}
+
 
 @keyframes fadeInOut {
   0% {
@@ -232,7 +228,10 @@
     <video autoplay muted loop playsinline class="background-video">
   <source src="aura.mp4" type="video/mp4" />
 </video>
-    
+
+
+      <source src="aura.mp4" type="video/mp4" />
+    </video>
     <div class="hero-text">
       <img src="Logo_Ver_1.svg" alt="Logo Wanderful" class="hero-logo">
     </div>
@@ -296,11 +295,7 @@ Rejoignez l’aventure Wanderful et embarquez avec nous pour faire accroître vo
         : 70 + Math.random() * 30;
     }
 
-    // nombre d'étoiles variable selon largeur écran
-  const isMobile = window.innerWidth < 600;
-  const sparkleCount = isMobile ? 7 : 15;
-
-    for (let i = 0; i < sparkleCount; i++) {
+    for (let i = 0; i < 15; i++) {
       const sparkle = document.createElement("div");
       sparkle.className = "sparkle";
       sparkle.textContent = "☆";
