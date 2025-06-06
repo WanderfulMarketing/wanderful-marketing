@@ -275,31 +275,30 @@ Rejoignez l’aventure Wanderful et embarquez avec nous pour faire accroître vo
     © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
   </footer>
 
-  <script>
- document.addEventListener("DOMContentLoaded", function () {
-  const wrapper = document.querySelector(".magic-wrapper");
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector(".magic-wrapper");
 
-  function randomOutsideCenter() {
-    // Génère un nombre aléatoire entre 0-30 ou 70-100
-    return Math.random() < 0.5
-      ? Math.random() * 30
-      : 70 + Math.random() * 30;
-  }
+    function randomOutsideCenter() {
+      return Math.random() < 0.5
+        ? Math.random() * 30
+        : 70 + Math.random() * 30;
+    }
 
-  for (let i = 0; i < 15; i++) {
-    const sparkle = document.createElement("div");
-    sparkle.className = "sparkle";
-    sparkle.textContent = "☆"; // forme étoile vide
+    for (let i = 0; i < 15; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.textContent = "☆";
 
-    sparkle.style.top = `${randomOutsideCenter()}%`;
-    sparkle.style.left = `${randomOutsideCenter()}%`;
-    sparkle.style.animationDelay = `${Math.random() * 5}s`;
+      sparkle.style.top = `${randomOutsideCenter()}%`;
+      sparkle.style.left = `${randomOutsideCenter()}%`;
+      sparkle.style.animationDelay = `${Math.random() * 5}s`;
 
-    wrapper.appendChild(sparkle);
-  }
-});
-
+      wrapper.appendChild(sparkle);
+    }
+  });
 </script>
+
 
 </body>
 </html>
