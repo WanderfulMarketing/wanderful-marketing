@@ -300,15 +300,14 @@ Rejoignez l’aventure Wanderful et embarquez avec nous pour faire accroître vo
       sparkle.className = "sparkle";
       sparkle.textContent = "☆";
 
-      sparkle.style.top = ${randomOutsideCenter()}%;
-      sparkle.style.left = ${randomOutsideCenter()}%;
-      sparkle.style.animationDelay = ${Math.random() * 5}s;
+      sparkle.style.top = randomOutsideCenter() + "%";
+      sparkle.style.left = randomOutsideCenter() + "%";
+      sparkle.style.animationDelay = Math.random() * 5 + "s";
 
       wrapper.appendChild(sparkle);
     }
   });
 </script>
-
 
 </body>
 </html>
