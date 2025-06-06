@@ -128,27 +128,49 @@
   letter-spacing: 0.05em;
   text-transform: none;
   opacity: 0;
-  animation: fadeInOut 28s ease infinite;
+  animation: fadeInOut 19s ease-in-out infinite;
+  animation-fill-mode: forwards;
 }
+
 
 @keyframes fadeInOut {
   0% {
     opacity: 0;
     transform: translateY(20px);
+    text-shadow: none;
   }
-  10% {
+  15.79% {
     opacity: 1;
     transform: translateY(0);
+    animation: twinkle 1.5s ease-in-out infinite;
   }
-  60% {
+  68.42% {
     opacity: 1;
     transform: translateY(0);
+    animation: twinkle 1.5s ease-in-out infinite;
+  }
+  84.21% {
+    opacity: 0;
+    transform: translateY(-10px);
+    text-shadow: none;
   }
   100% {
     opacity: 0;
     transform: translateY(-10px);
+    text-shadow: none;
   }
 }
+
+
+    @keyframes twinkle {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  }
+}
+
   </style>
 </head>
 <body>
