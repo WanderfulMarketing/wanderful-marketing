@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wanderful | Marketing Agency</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
     :root {--primary:#d3abdd;--secondary:#a6c4d2;--accent:#6763b5;--text:#000;--font:'Outfit',sans-serif;}
@@ -115,32 +116,39 @@
   }
 }
 
-    .magic-phrase {
+.magic-phrase {
   max-width: 800px;
-  margin: 0 auto; /* centrer horizontalement */
+  margin: 0 auto;
   padding: 1rem 2rem;
   text-align: center;
-  font-family: var(--font);
-  font-size: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  
-  /* Animation */
+  letter-spacing: 0.05em;
+  text-transform: none;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideUp 2s ease forwards;
-  animation-delay: 0.3s;
+  animation: fadeInOut 28s ease forwards;
 }
 
-@keyframes fadeSlideUp {
-  to {
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
     opacity: 1;
     transform: translateY(0);
   }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
-
   </style>
 </head>
 <body>
@@ -178,7 +186,7 @@ Chez Wanderful, on croit que le potentiel est sans limites : comme un sortilège
   </section>
   
 <section class="magic-phrase">
-  <p>Casting Spells for Endless Visibility.</p>
+  <p>Casting Spells for Endless Visibility</p>
 </section>
 
   <section class="trust-section">
