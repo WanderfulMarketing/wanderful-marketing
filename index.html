@@ -160,47 +160,35 @@
     text-shadow: none;
   }
 }
-
-
-    @keyframes twinkle {
-  0%, 100% {
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-  }
-}
-    .sparkles {
+    
+.sparkle {
   position: absolute;
-  top: 60%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.sparkles::before,
-.sparkles::after {
-  content: '✨';
-  position: absolute;
-  font-size: 1.5rem;
-  animation: sparkleAnimation 2s infinite ease-in-out;
+  font-size: 0.8rem;
   color: var(--primary);
+  opacity: 0;
+  animation: sparkle-pop 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.sparkles::after {
-  content: '⭐';
-  left: 40px;
-  top: -10px;
-  animation-delay: 1s;
+@keyframes sparkle-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-5px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(0);
+  }
 }
 
-@keyframes sparkleAnimation {
-  0% { opacity: 0; transform: scale(0.5) translateY(0);}
-  50% { opacity: 1; transform: scale(1.2) translateY(-10px);}
-  100% { opacity: 0; transform: scale(0.5) translateY(0);}
-}
 .magic-wrapper {
   position: relative;
   display: flex;
@@ -279,5 +267,25 @@ Rejoignez l’aventure Wanderful et embarquez avec nous pour faire accroître vo
   <footer>
     © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector(".magic-wrapper");
+
+    for (let i = 0; i < 20; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.textContent = Math.random() > 0.5 ? "✨" : "⭐";
+
+      // Positionnement aléatoire autour du texte
+      sparkle.style.top = `${Math.random() * 100}%`;
+      sparkle.style.left = `${Math.random() * 100}%`;
+      sparkle.style.animationDelay = `${Math.random() * 3}s`;
+
+      wrapper.appendChild(sparkle);
+    }
+  });
+</script>
+
 </body>
 </html>
