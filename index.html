@@ -130,6 +130,8 @@
   opacity: 0;
   animation: fadeInOut 19s ease-in-out infinite;
   animation-fill-mode: forwards;
+  position: relative;
+  z-index: 2;  /* devant les étoiles */
 }
 
 
@@ -163,11 +165,12 @@
     
 .sparkle {
   position: absolute;
-  color: #000; /* noir neutre */
+  color: #444;  /* gris foncé */
   font-size: 1rem;
   opacity: 0;
   animation: sparkle-pop 4s ease-in-out infinite;
   pointer-events: none;
+  z-index: 0;  /* derrière le texte */
 }
 
 
@@ -196,9 +199,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* ou adapte à ce que tu veux */
+  height: 100px; /* ou la hauteur souhaitée */
+  z-index: 1;
 }
-
 
   </style>
 </head>
