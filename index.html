@@ -170,6 +170,43 @@
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
   }
 }
+    .sparkles {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sparkles::before,
+.sparkles::after {
+  content: '✨';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: sparkleAnimation 2s infinite ease-in-out;
+  color: var(--primary);
+}
+
+.sparkles::after {
+  content: '⭐';
+  left: 40px;
+  top: -10px;
+  animation-delay: 1s;
+}
+
+@keyframes sparkleAnimation {
+  0% { opacity: 0; transform: scale(0.5) translateY(0);}
+  50% { opacity: 1; transform: scale(1.2) translateY(-10px);}
+  100% { opacity: 0; transform: scale(0.5) translateY(0);}
+}
+.magic-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
   </style>
 </head>
@@ -206,10 +243,13 @@ Chez Wanderful, on croit que le potentiel est sans limites : comme un sortilège
       </p>
     </div>
   </section>
-  
-<section class="magic-phrase">
-  <p>Casting Spells for Endless Visibility</p>
-</section>
+
+<div class="magic-wrapper">
+  <div class="sparkles"></div>
+  <section class="magic-phrase">
+    <p>Casting Spells for Endless Visibility</p>
+  </section>
+</div>
 
   <section class="trust-section">
     <div class="trust-container">
