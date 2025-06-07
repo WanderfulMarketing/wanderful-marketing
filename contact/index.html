@@ -256,19 +256,19 @@
       <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
-    <div id="form-message" style="display:none; margin-top:1rem; color:green; font-weight:bold;"></div>
+     <div id="form-message" style="display:none; margin-top:1rem; color:#6763b5; font-weight:bold; font-family: 'Outfit', sans-serif;"></div>
   </main>
 
   <footer>
     © 2025 <span>Wanderful Marketing</span> — Tous droits réservés
   </footer>
   
-  <script>
+ <script>
   const form = document.getElementById('contact-form');
   const messageDiv = document.getElementById('form-message');
 
   form.addEventListener('submit', async function(e) {
-    e.preventDefault();  // Stop la soumission normale
+    e.preventDefault();
 
     const formData = new FormData(form);
 
@@ -287,13 +287,10 @@
         form.reset();
       } else {
         const data = await response.json();
-        if (data.errors) {
-          messageDiv.style.display = 'block';
-          messageDiv.textContent = data.errors.map(error => error.message).join(", ");
-        } else {
-          messageDiv.style.display = 'block';
-          messageDiv.textContent = "Une erreur est survenue. Veuillez réessayer.";
-        }
+        messageDiv.style.display = 'block';
+        messageDiv.textContent = data.errors
+          ? data.errors.map(error => error.message).join(", ")
+          : "Une erreur est survenue. Veuillez réessayer.";
       }
     } catch (error) {
       messageDiv.style.display = 'block';
@@ -301,6 +298,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>
