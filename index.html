@@ -131,7 +131,8 @@
 @media (max-width: 600px) {
   .about-container h3,
   .trust-container h3 {
-    font-size: 1.4rem; /* taille un peu plus petite sur mobile */
+    font-size: 1.4rem; 
+    padding: 0 1rem;
   }
 }
 
@@ -312,6 +313,9 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
 }
 
 .cta-btn:hover {
@@ -383,7 +387,7 @@
 </h2>
     <div class="hero-buttons">
       <button class="cta-btn">Expertises</button>
-      <button class="cta-btn">Contactez-nous</button>
+      <a href="/contact" class="cta-btn">Contactez-nous</a>
     </div>
   </div>
   <div class="hero-right">
