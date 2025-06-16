@@ -149,17 +149,20 @@
   text-align: center;
   font-family: var(--font);
   font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-weight: 600;
+  color: var(--secondary);
   letter-spacing: 0.05em;
   text-transform: none;
-  opacity: 0;
-  animation: fadeInOut 19s ease-in-out infinite;
-  animation-fill-mode: forwards;
+  opacity: 1;
   position: relative;
-  z-index: 2;  /* devant les étoiles */
+  z-index: 2; 
 }
-
+@media (max-width: 600px) {
+  .magic-phrase {
+    font-size: 1.4rem; /* même taille que les h3 sur mobile */
+    padding: 0 1rem;
+  }
+}
 
 @keyframes fadeInOut {
   0% {
