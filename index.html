@@ -9,6 +9,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="Logo_Ver_4.svg" type="image/svg+xml">
   <style>
+
+    #construction-popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 1rem;
+}
+
+#popup-content {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#popup-content h2 {
+  font-family: var(--font);
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+#popup-content p {
+  font-family: var(--font);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+#enter-site-btn {
+  font-family: var(--font);
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#enter-site-btn:hover {
+  background-color: var(--accent);
+}
+
+/* Adaptation mobile */
+@media (max-width: 480px) {
+  #popup-content {
+    padding: 1.5rem 1.8rem;
+  }
+  #popup-content h2 {
+    font-size: 1.8rem;
+  }
+  #popup-content p {
+    font-size: 0.95rem;
+  }
+}
+
     
     html, body {
   overflow-x: hidden;
@@ -369,6 +434,15 @@
 </head>
 <body>
   
+  <div id="construction-popup">
+  <div id="popup-content">
+    <h2>Site en construction</h2>
+    <p>Ce site est encore en construction. Merci de votre compréhension !</p>
+    <button id="enter-site-btn">Entrer</button>
+  </div>
+</div>
+
+  
   <header>
     
     <a href="/" class="logo">
@@ -488,6 +562,17 @@
 </script>
 
   <script src="//code.tidio.co/jd2rqpixzagoq19ereaaqzsk8gvmyitn.js" async></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('construction-popup');
+    const enterBtn = document.getElementById('enter-site-btn');
+
+    enterBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
