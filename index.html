@@ -164,6 +164,20 @@ spline-viewer{
 }
 @keyframes glow-pulse{0%,100%{opacity:.7;transform:translateY(-50%) scale(1);}50%{opacity:1;transform:translateY(-50%) scale(1.08);}}
 
+/* Covers "Built with Spline" badge at bottom-right of viewer */
+.spline-cover{
+  position:absolute;bottom:0;right:0;
+  width:200px;height:52px;z-index:15;
+  pointer-events:none;
+  background:linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(217,214,242,.85) 65%,
+    #D9D6F2 100%
+  );
+}
+
 /* Loading state */
 .spline-loader{
   position:absolute;inset:0;z-index:20;
@@ -286,20 +300,18 @@ h1 .line2{
   <div class="nav-logo">
     <!-- Magic wand + star SVG — fidèle au concept du logo Wanderful -->
     <div class="logo-wand">
-      <svg width="38" height="44" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Étoile / star en haut -->
-        <polygon points="19,2 21.5,9 29,9 23,13.5 25.5,21 19,16.5 12.5,21 15,13.5 9,9 16.5,9"
-          fill="#CFC3E8" stroke="#B07FE0" stroke-width="0.8"/>
-        <!-- Petits points magiques -->
-        <circle cx="7"  cy="6"  r="1.6" fill="#F4D6E3"/>
-        <circle cx="31" cy="8"  r="1.2" fill="#D6E6F5"/>
-        <circle cx="10" cy="16" r="1"   fill="#CFC3E8"/>
-        <!-- Baguette (wand) -->
-        <line x1="19" y1="21" x2="5" y2="42"
-          stroke="#3D1766" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Grip de la baguette -->
-        <line x1="8.5" y1="38" x2="5.5" y2="42"
-          stroke="#7B3FBD" stroke-width="3" stroke-linecap="round"/>
+      <svg width="34" height="40" viewBox="0 0 34 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Wand body — clean diagonal stick -->
+        <path d="M20 11 L5 38" stroke="#3D1766" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- Grip wrap at bottom -->
+        <path d="M7.5 33.5 L4.5 38.5" stroke="#7B3FBD" stroke-width="3.8" stroke-linecap="round"/>
+        <!-- 4-point sparkle star at tip -->
+        <path d="M20 1 L21.4 6.6 L27 5 L21.4 8.4 L23 14 L20 9.6 L17 14 L18.6 8.4 L13 5 L18.6 6.6Z"
+          fill="#E2D4F8" stroke="#9B60D4" stroke-width="0.9" stroke-linejoin="round"/>
+        <!-- Tiny sparkle dots -->
+        <circle cx="8"  cy="5"  r="1.4" fill="#F4D6E3" opacity=".9"/>
+        <circle cx="29" cy="9"  r="1.0" fill="#D6E6F5" opacity=".9"/>
+        <circle cx="28" cy="22" r="0.8" fill="#CFC3E8" opacity=".7"/>
       </svg>
     </div>
     <!-- Texte : Wande en sombre + rful en violet, sous-titre Marketing Agency -->
@@ -335,6 +347,8 @@ h1 .line2{
     ></spline-viewer>
     <!-- Purple tint overlay -->
     <div class="spline-tint"></div>
+    <!-- Covers the "Built with Spline" watermark badge -->
+    <div class="spline-cover"></div>
   </div>
 
   <!-- Gradient masks for text legibility -->
@@ -466,7 +480,7 @@ h1 .line2{
       <h3>Branding & Identité</h3>
       <p class="svc-short">Une marque qui vous ressemble et qui marque les esprits.</p>
       <div class="svc-expand">
-        <p>Création ou refonte de votre identité visuelle, charte graphique, positionnement de marque — �/ur que votre image reflète parfaitement vos valeurs et attire vos clients idéaux.</p>
+        <p>Création ou refonte de votre identité visuelle, charte graphique, positionnement de marque — pour que votre image reflète parfaitement vos valeurs et attire vos clients idéaux.</p>
         <ul>
           <li>Logo & charte graphique</li>
           <li>Positionnement de marque</li>
@@ -505,7 +519,7 @@ h1 .line2{
         <p>Optimisation on-page et off-page, stratégie de backlinks, audit technique — pour que vos clients vous trouvent naturellement sur Google, sans payer chaque clic.</p>
         <ul>
           <li>Audit & optimisation SEO</li>
-          <li>Stratégie de contenu organique</li>
+          <li>Stratégie de content organique</li>
           <li>Netlinking & autorité de domaine</li>
         </ul>
       </div>
