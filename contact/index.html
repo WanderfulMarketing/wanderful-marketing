@@ -205,57 +205,21 @@
     }
     .booking-badge svg{width:13px;height:13px;flex-shrink:0;}
 
-    /* ── BOOKING BODY ── */
-    .booking-body{
-      background:linear-gradient(135deg,#F4F1FF,#EDE8FF);
+    /* ── BOOKING IFRAME ── */
+    .booking-iframe-wrap{
       border-radius:16px;
-      padding:40px 36px;
-      display:flex;flex-direction:column;align-items:center;gap:32px;
+      overflow:hidden;
+      background:#F4F1FF;
+      border:1px solid rgba(123,63,189,.1);
     }
-
-    /* 3 steps row */
-    .book-steps{
-      display:flex;align-items:flex-start;justify-content:center;
-      gap:0;flex-wrap:wrap;width:100%;
+    .booking-iframe-wrap iframe{
+      width:100%;
+      height:620px;
+      border:none;
+      display:block;
     }
-    .book-step{
-      flex:1;min-width:180px;max-width:240px;
-      text-align:center;padding:0 20px;
-    }
-    .step-circle{
-      width:40px;height:40px;border-radius:50%;
-      background:var(--p1);color:#fff;
-      font-weight:800;font-size:1rem;
-      display:flex;align-items:center;justify-content:center;
-      margin:0 auto 14px;
-      box-shadow:0 4px 16px rgba(123,63,189,.35);
-    }
-    .book-step p{font-size:.88rem;color:var(--ts);line-height:1.55;}
-    .book-step p strong{color:var(--p2);}
-    .step-arrow{
-      font-size:1.4rem;color:var(--p1);opacity:.5;
-      padding:0 4px;margin-top:12px;
-      flex-shrink:0;align-self:flex-start;
-    }
-    @media(max-width:680px){.step-arrow{display:none;}.book-step{min-width:140px;}}
-
-    /* Email CTA button */
-    .book-email-btn{
-      display:inline-flex;align-items:center;gap:12px;
-      padding:16px 36px;border-radius:12px;
-      background:linear-gradient(135deg,var(--p1),var(--p2));
-      color:#fff;font-weight:700;font-size:1rem;
-      text-decoration:none;letter-spacing:.02em;
-      box-shadow:0 6px 24px rgba(123,63,189,.45);
-      transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s;
-    }
-    .book-email-btn:hover{
-      transform:translateY(-3px) scale(1.02);
-      box-shadow:0 10px 32px rgba(123,63,189,.6);
-    }
-    .book-note{
-      font-size:.78rem;color:var(--ts);opacity:.7;
-      letter-spacing:.04em;
+    @media(max-width:680px){
+      .booking-iframe-wrap iframe{height:680px;}
     }
 
     /* ── FOOTER ── */
@@ -433,31 +397,14 @@
         </div>
       </div>
 
-      <!-- Booking flow — simple, no setup needed -->
-      <div class="booking-body">
-        <div class="book-steps">
-          <div class="book-step">
-            <div class="step-circle">1</div>
-            <p>Envoyez un e-mail en précisant <strong>vos créneaux disponibles</strong></p>
-          </div>
-          <div class="step-arrow">→</div>
-          <div class="book-step">
-            <div class="step-circle">2</div>
-            <p>On confirme et vous envoie un <strong>lien Google Meet</strong></p>
-          </div>
-          <div class="step-arrow">→</div>
-          <div class="book-step">
-            <div class="step-circle">3</div>
-            <p>Appel <strong>30 min</strong>, gratuit, sans engagement</p>
-          </div>
-        </div>
-
-        <a href="mailto:marketingwanderful@gmail.com?subject=Demande%20d%27appel%20Google%20Meet&body=Bonjour%2C%0A%0AJe%20souhaiterais%20planifier%20un%20appel%20de%2030%20minutes%20avec%20votre%20%C3%A9quipe.%0A%0AMes%20disponibilit%C3%A9s%20%3A%0A-%20...%0A%0ACordialement%2C" class="book-email-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#fff" stroke-width="2"/><path d="M2 7l10 7 10-7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-          Envoyer une demande d'appel
-        </a>
-
-        <p class="book-note">Réponse sous 24h · Lundi – Vendredi · 8h–20h</p>
+      <!-- Google Calendar Appointment Scheduling embed -->
+      <div class="booking-iframe-wrap">
+        <iframe
+          src="https://calendar.app.google/eGQ1Qci8t8Vc9xas7"
+          title="Réserver un appel Google Meet – Wanderful Marketing"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
       </div>
 
     </div>
