@@ -205,28 +205,58 @@
     }
     .booking-badge svg{width:13px;height:13px;flex-shrink:0;}
 
-    /* Calendly container */
-    .calendly-wrap{
-      border-radius:14px;overflow:hidden;
-      border:1px solid rgba(123,63,189,.1);
+    /* ── BOOKING BODY ── */
+    .booking-body{
+      background:linear-gradient(135deg,#F4F1FF,#EDE8FF);
+      border-radius:16px;
+      padding:40px 36px;
+      display:flex;flex-direction:column;align-items:center;gap:32px;
     }
-    .calendly-inline-widget{min-width:320px;height:680px;}
 
-    /* Fallback booking CTA (shows if Calendly not configured) */
-    .booking-placeholder{
-      text-align:center;padding:48px 24px;
-      background:linear-gradient(135deg,#F4F1FF,#EDE0FF);
-      border-radius:14px;border:2px dashed rgba(123,63,189,.25);
+    /* 3 steps row */
+    .book-steps{
+      display:flex;align-items:flex-start;justify-content:center;
+      gap:0;flex-wrap:wrap;width:100%;
     }
-    .booking-placeholder p{color:var(--ts);margin-bottom:20px;line-height:1.6;}
-    .booking-placeholder a{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:14px 28px;border-radius:12px;
+    .book-step{
+      flex:1;min-width:180px;max-width:240px;
+      text-align:center;padding:0 20px;
+    }
+    .step-circle{
+      width:40px;height:40px;border-radius:50%;
       background:var(--p1);color:#fff;
-      font-weight:700;font-size:.95rem;text-decoration:none;
-      transition:transform .25s cubic-bezier(.34,1.56,.64,1);
+      font-weight:800;font-size:1rem;
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 14px;
+      box-shadow:0 4px 16px rgba(123,63,189,.35);
     }
-    .booking-placeholder a:hover{transform:translateY(-2px);}
+    .book-step p{font-size:.88rem;color:var(--ts);line-height:1.55;}
+    .book-step p strong{color:var(--p2);}
+    .step-arrow{
+      font-size:1.4rem;color:var(--p1);opacity:.5;
+      padding:0 4px;margin-top:12px;
+      flex-shrink:0;align-self:flex-start;
+    }
+    @media(max-width:680px){.step-arrow{display:none;}.book-step{min-width:140px;}}
+
+    /* Email CTA button */
+    .book-email-btn{
+      display:inline-flex;align-items:center;gap:12px;
+      padding:16px 36px;border-radius:12px;
+      background:linear-gradient(135deg,var(--p1),var(--p2));
+      color:#fff;font-weight:700;font-size:1rem;
+      text-decoration:none;letter-spacing:.02em;
+      box-shadow:0 6px 24px rgba(123,63,189,.45);
+      transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s;
+    }
+    .book-email-btn:hover{
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 10px 32px rgba(123,63,189,.6);
+    }
+    .book-note{
+      font-size:.78rem;color:var(--ts);opacity:.7;
+      letter-spacing:.04em;
+    }
 
     /* ── FOOTER ── */
     footer{
@@ -403,21 +433,31 @@
         </div>
       </div>
 
-      <!-- Calendly inline widget — remplace VOTRE-LIEN par ton username Calendly -->
-      <div class="calendly-wrap" id="calendly-container">
-        <!-- PLACEHOLDER: remplace l'URL ci-dessous par ton lien Calendly une fois créé -->
-        <div class="booking-placeholder" id="booking-placeholder">
-          <p>
-            <strong>Pour activer la réservation automatique :</strong><br>
-            Crée un compte gratuit sur <a href="https://calendly.com" target="_blank" rel="noopener">calendly.com</a>, 
-            connecte ton Google Meet, puis remplace l'URL dans le code.<br><br>
-            En attendant, réserve ton appel directement par e-mail ou LinkedIn ci-dessus.
-          </p>
-          <a href="mailto:marketingwanderful@gmail.com?subject=Demande d'appel Google Meet">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l4 4-4 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Demander un appel par e-mail
-          </a>
+      <!-- Booking flow — simple, no setup needed -->
+      <div class="booking-body">
+        <div class="book-steps">
+          <div class="book-step">
+            <div class="step-circle">1</div>
+            <p>Envoyez un e-mail en précisant <strong>vos créneaux disponibles</strong></p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="book-step">
+            <div class="step-circle">2</div>
+            <p>On confirme et vous envoie un <strong>lien Google Meet</strong></p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="book-step">
+            <div class="step-circle">3</div>
+            <p>Appel <strong>30 min</strong>, gratuit, sans engagement</p>
+          </div>
         </div>
+
+        <a href="mailto:marketingwanderful@gmail.com?subject=Demande%20d%27appel%20Google%20Meet&body=Bonjour%2C%0A%0AJe%20souhaiterais%20planifier%20un%20appel%20de%2030%20minutes%20avec%20votre%20%C3%A9quipe.%0A%0AMes%20disponibilit%C3%A9s%20%3A%0A-%20...%0A%0ACordialement%2C" class="book-email-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#fff" stroke-width="2"/><path d="M2 7l10 7 10-7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          Envoyer une demande d'appel
+        </a>
+
+        <p class="book-note">Réponse sous 24h · Lundi – Vendredi · 8h–20h</p>
       </div>
 
     </div>
@@ -454,18 +494,6 @@ form.addEventListener('submit', async e => {
   }
 });
 
-/* Calendly — décommente et remplace l'URL une fois ton compte créé
-(function(){
-  const d = document.getElementById('calendly-container');
-  const p = document.getElementById('booking-placeholder');
-  p.style.display = 'none';
-  d.innerHTML = '<div class="calendly-inline-widget" data-url="https://calendly.com/TON-USERNAME/30min?hide_gdpr_banner=1&primary_color=7b3fbd" style="min-width:320px;height:680px;"></div>';
-  const s = document.createElement('script');
-  s.src = 'https://assets.calendly.com/assets/external/widget.js';
-  s.async = true;
-  document.head.appendChild(s);
-})();
-*/
 </script>
 
 </body>
