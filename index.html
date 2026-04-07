@@ -1,527 +1,999 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Wanderful Marketing, parfois appelé à tort Wonderful Marketing et parfois écrit Wanderfull Marketing, est une agence de marketing digital à Yvonand. Nous aidons les PME suisses à gagner en visibilité grâce à des stratégies innovantes intégrant l'intelligence artificielle.">
-  <title>Wanderful - Agence de marketing digital à Yvonand, Suisse </title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="Logo_Ver_4.svg" type="image/svg+xml">
-  <style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wanderful — Agence de marketing digital</title>
 
-    html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-    :root {
-  --primary: #7B3FBD; 
-  --secondary: #3D1766; 
-  --accent: #4B0082; 
-  --text: #3D1766;
-  --font: 'Outfit', sans-serif;
-}
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
 
-    *{margin:0;padding:0;box-sizing:border-box;}
-    
-    body{font-family:var(--font);background:#fff;color:var(--text);margin: 0;
-  overflow-x: hidden;}
-    
-    header{height: 60px;position:fixed;top:0;width:100%;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);z-index:1000;}
-    
-    .logo {
-  display: flex;
-  align-items: center;
-  height: 100%;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --p1: #7B3FBD;
+  --p2: #3D1766;
+  --p3: #5A2898;
+  --p4: #B07FE0;
+  --p5: #D4B0F8;
+  --cy: #7EC8DC;
+  --bg-dark: #D9D6F2;
+  --bg-mid:  #CFC3E8;
 }
 
-    nav a{font-family:var(--font);text-decoration:none;color:var(--text);margin-left:2rem;font-weight:700;text-transform:uppercase;transition:color 0.3s ease;}
-    
-    nav a:hover{color:var(--accent);}
-    
-    html{scroll-behavior:smooth;}
-    
-    .hero-logo {
-  max-width: 90vw;
-  max-height: 40vh;
-  height: auto;
-  width: auto;
-  display: block;
-  margin: 0 auto;
+html,body{height:100%;overflow-x:hidden;}
+body{font-family:'Outfit',sans-serif;cursor:none;background:#D9D6F2;}
+
+/* ── CURSOR ── */
+#cur{
+  position:fixed;width:12px;height:12px;border-radius:50%;z-index:9999;
+  pointer-events:none;transform:translate(-50%,-50%);
+  background:var(--p4);
+  box-shadow:0 0 0 2px rgba(176,127,224,.25),0 0 16px 6px rgba(176,127,224,.5);
+  transition:width .15s,height .15s,background .15s;
+}
+#cur.big{width:30px;height:30px;background:var(--cy);
+  box-shadow:0 0 0 2px rgba(126,200,220,.25),0 0 20px 8px rgba(126,200,220,.5);}
+#cur-ring{
+  position:fixed;width:40px;height:40px;border-radius:50%;z-index:9998;
+  pointer-events:none;transform:translate(-50%,-50%);
+  border:1.5px solid rgba(176,127,224,.4);
+  transition:left .09s ease-out,top .09s ease-out;
 }
 
-    @media (max-width: 600px) {
-  .hero-logo {
-    max-width: 80vw;
-    max-height: 30vh;
-    display: none;
-  }
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 56px;
+  background:linear-gradient(180deg,rgba(217,214,242,.96) 0%,rgba(217,214,242,.0) 100%);
+  backdrop-filter:blur(8px);
 }
-    
-    h1{font-family:var(--font);font-size:clamp(3rem,10vw,6rem);color:var(--primary);font-weight:700;letter-spacing: 0.04em;text-transform:uppercase;}
-    
-    h2{font-family:var(--font);font-size:clamp(1rem,2vw,1.5rem);color:var(--primary);font-weight:400;letter-spacing:0.02em;text-transform:uppercase;margin-top:0.5rem;}
-    
-    .about-section{padding:4rem 2rem;margin-top:4rem;background-color:#fff;}
-    
-    .about-container{max-width:800px;margin:auto;text-align:center;}
-    .about-container h3{font-family:var(--font);font-size: clamp(2rem, 5vw, 3rem);color:var(--primary);margin-bottom:1.5rem;text-transform:none;font-weight:700;}
-    .about-container p{font-family:var(--font);font-size:1.1rem;color:var(--text);line-height:1.8;}
-    
-    .trust-section{padding:6rem 2rem;background-color:#fff;margin-top:1rem;}
-    .trust-container{max-width:800px;margin:auto;text-align:center;}
-    .trust-container h3{font-family:var(--font);font-size: clamp(2rem, 5vw, 3rem);color:var(--primary);margin-bottom:1.5rem;text-transform:none;font-weight:700;}
-    .trust-container p{font-family:var(--font);font-size:1.1rem;color:var(--text);line-height:1.8;}
-    
-    .contact-section{max-width:800px;margin:auto;padding:4rem 2rem;background-color:#fff;}
-    .contact-intro{font-size:1.6rem;margin-bottom:2rem;font-weight:700;text-align:center;}
-    
-    form{display:flex;flex-direction:column;gap:1rem;}
-    
-    input,textarea{font-family:var(--font);padding:1rem;font-size:1rem;border:1px solid #ccc;border-radius:4px;}
-    
-    textarea{resize:none;overflow-y:auto;}
-    
-    button{padding:1rem;font-family:var(--font);font-size:1rem;background-color:var(--primary);color:white;border:none;border-radius:4px;cursor:pointer;transition:background 0.3s ease;}
-    button:hover{background-color:var(--accent);}
-    
-    .background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.4;
-  filter: blur(8px);
-  background: url('poster.jpg') center center / cover no-repeat;
+.nav-logo{display:flex;align-items:center;gap:4px;}
+
+/* Wand icon */
+.logo-wand{position:relative;display:flex;align-items:flex-end;margin-right:2px;}
+.logo-wand svg{display:block;}
+
+/* "Wande" in script style + "rful" in bold caps — like the real logo */
+.logo-wande{
+  font-family:'Outfit',sans-serif;
+  font-size:1.55rem;font-weight:800;
+  color:var(--p2);letter-spacing:-.02em;
+  line-height:1;
+}
+.logo-rful{
+  font-family:'Outfit',sans-serif;
+  font-size:1.55rem;font-weight:800;
+  color:var(--p1);letter-spacing:-.02em;
+  line-height:1;
+}
+.logo-sub{
+  display:block;font-size:.55rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ts);opacity:.55;margin-top:1px;
+  line-height:1;
+}
+nav ul{list-style:none;display:flex;gap:30px;align-items:center;}
+nav a{color:var(--ts);text-decoration:none;font-size:.82rem;
+  font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s;}
+nav a:hover{color:var(--p1);}
+.nav-cta{
+  padding:10px 22px;border-radius:8px;
+  background:linear-gradient(135deg,var(--p1),var(--p3));
+  color:#fff !important;font-weight:600 !important;
+  text-transform:none !important;letter-spacing:.03em !important;
+  box-shadow:0 4px 20px rgba(123,63,189,.5);
+  transition:box-shadow .2s,transform .15s !important;
+}
+.nav-cta:hover{box-shadow:0 6px 28px rgba(123,63,189,.7)!important;transform:translateY(-1px);}
+
+/* ── HERO — full screen ── */
+.hero{
+  position:relative;min-height:100vh;overflow:hidden;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, #F4D6E3 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 20% 30%, #D6E6F5 0%, transparent 55%),
+    radial-gradient(ellipse 80% 70% at 50% 80%, #CFC3E8 0%, transparent 65%),
+    #D9D6F2;
 }
 
-    
-    .hero-text{position:relative;z-index:1;}
-    
-    footer{background-color:#f8f8f8;text-align:center;padding:2rem 1rem;font-size:0.9rem;color:#555;margin-top:4rem;}
-    footer span{color:var(--primary);font-weight:600;}
-    
-    @media(max-width:768px){
-      h1{font-size:2.5rem;}
-      h2{font-size:1.2rem;}
-      nav a{margin-left:1rem;font-size:0.9rem;}
-    }
-    
-.nav-logo {
-  height: 50px;
-  width: auto;
-  display: block;
-  vertical-align: middle;
-  margin-top: -1px; /* ajuste ici si besoin */
-}
-    
-@media (max-width: 600px) 
-    {
-  header {
-    height: 50px; /* plus petit sur mobile */
-  }
-  .nav-logo {
-    height: 35px;
-  }
-}
-    
-@media (max-width: 600px) {
-  .about-container h3,
-  .trust-container h3 {
-    font-size: clamp(2rem, 8vw, 3rem);
-    padding: 0 1rem;
-  }
+/* ── SPLINE — fills right ~65% of hero ── */
+.spline-bg{
+  position:absolute;
+  right:-2%;top:0;
+  width:68%;height:100%;
+  z-index:1;
 }
 
-    @media (max-width: 600px) {
-  .contact-intro {
-    font-size: 1.3rem;
-  }
+spline-viewer{
+  width:100%;height:100%;display:block;
+  /* screen blend removes the black bg entirely */
+  mix-blend-mode: screen;
+  /* tint: brighten the dark robot → sepia → shift hue to lavender/lilac */
+  filter: brightness(2.2) sepia(0.7) hue-rotate(215deg) saturate(2.2) contrast(0.75);
 }
 
-.magic-phrase {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  text-align: center;
-  font-family: var(--font);
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: 0.02em;
-  text-transform: none;
-  opacity: 1;
-  position: relative;
-  z-index: 2; 
-}
-@media (max-width: 600px) {
-  .magic-phrase {
-    font-size: 1.4rem; /* même taille que les h3 sur mobile */
-    padding: 0 1rem;
-  }
+/* Pastel colour wash — soft lavender + blush overlay */
+.spline-tint{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(
+    130deg,
+    rgba(217,214,242,.55) 0%,
+    rgba(244,214,227,.40) 45%,
+    rgba(214,230,245,.45) 100%
+  );
+  mix-blend-mode: color;
 }
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-    text-shadow: none;
-  }
-  15.79% {
-    opacity: 1;
-    transform: translateY(0);
-    animation: twinkle 1.5s ease-in-out infinite;
-  }
-  68.42% {
-    opacity: 1;
-    transform: translateY(0);
-    animation: twinkle 1.5s ease-in-out infinite;
-  }
-  84.21% {
-    opacity: 0;
-    transform: translateY(-10px);
-    text-shadow: none;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-10px);
-    text-shadow: none;
-  }
+/* Gradient mask — left edge blends into bg so text reads cleanly */
+.hero-mask{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(
+    90deg,
+    #D9D6F2 0%,
+    rgba(217,214,242,.96) 28%,
+    rgba(217,214,242,.78) 40%,
+    rgba(217,214,242,.28) 56%,
+    transparent 70%
+  );
 }
-    
-.sparkle {
-  position: absolute;
-  color: #444;  /* gris foncé */
-  font-size: 1rem;
-  opacity: 0;
-  animation: sparkle-pop 4s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;  /* derrière le texte */
+/* Top + bottom fade — pastel only, no black */
+.hero-mask::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    rgba(217,214,242,.55) 0%,
+    transparent 18%,
+    transparent 78%,
+    rgba(207,195,232,.45) 100%);
 }
 
+/* Ambient glow behind robot */
+.robot-glow{
+  position:absolute;
+  right:10%;top:50%;transform:translateY(-50%);
+  width:420px;height:420px;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,
+    rgba(207,195,232,.6) 0%,
+    rgba(244,214,227,.4) 40%,
+    transparent 70%);
+  filter:blur(40px);
+  animation:glow-pulse 5s ease-in-out infinite;
+}
+@keyframes glow-pulse{0%,100%{opacity:.7;transform:translateY(-50%) scale(1);}50%{opacity:1;transform:translateY(-50%) scale(1.08);}}
 
+/* Loading state */
+.spline-loader{
+  position:absolute;inset:0;z-index:20;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:transparent;transition:opacity .8s;
+}
+.spline-loader.hide{opacity:0;pointer-events:none;}
+.loader-ring{
+  width:44px;height:44px;border-radius:50%;
+  border:3px solid rgba(176,127,224,.2);border-top-color:var(--p4);
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loader-text{font-size:.75rem;font-weight:500;color:rgba(176,127,224,.6);letter-spacing:.1em;text-transform:uppercase;}
 
-@keyframes sparkle-pop {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) translateY(0);
-  }
-  30% {
-    opacity: 1;
-    transform: scale(1.2) translateY(-5px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5) translateY(0);
-  }
+/* ── HERO CONTENT — overlaid on left ── */
+.hero-content{
+  position:relative;z-index:10;
+  min-height:100vh;display:flex;align-items:center;
+  padding:110px 56px 80px;
+  max-width:580px;
 }
 
-.magic-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px; /* ou la hauteur souhaitée */
-  z-index: 1;
+.hero-inner{width:100%;}
+
+.badge{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;
+  background:rgba(123,63,189,.1);
+  border:1px solid rgba(123,63,189,.25);
+  border-radius:6px;padding:6px 14px;
+  font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--p1);
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;
+  background:var(--cy);box-shadow:0 0 8px var(--cy);
+  animation:bdot 2s ease-in-out infinite;}
+@keyframes bdot{0%,100%{opacity:1;}50%{opacity:.2;}}
+
+h1{
+  font-size:clamp(2.8rem,4.2vw,4.2rem);
+  font-weight:800;line-height:1.06;letter-spacing:.02em;
+  color:var(--p1);margin-bottom:6px;
+}
+h1 .line2{
+  display:block;font-weight:300;
+  font-size:clamp(1.5rem,2.3vw,2.2rem);
+  color:var(--ts);letter-spacing:.06em;margin-top:10px;
 }
 
-.youtube-section {
-  padding: 4rem 1rem;
-  background-color: #fff;
-  text-align: center;
+.desc{
+  font-size:1rem;line-height:1.78;
+  color:var(--ts);
+  margin-top:22px;margin-bottom:40px;
+  font-weight:400;max-width:410px;
 }
+.desc b{color:var(--p1);font-weight:600;}
 
-.youtube-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  overflow: hidden;
+.btns{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.b-main{
+  display:inline-flex;align-items:center;gap:10px;cursor:none;
+  padding:14px 28px;border-radius:8px;text-decoration:none;
+  background:linear-gradient(135deg,var(--p1) 0%,var(--p3) 100%);
+  color:#fff;font-family:'Outfit',sans-serif;
+  font-weight:700;font-size:.9rem;letter-spacing:.04em;
+  box-shadow:0 6px 24px rgba(123,63,189,.5);
+  transition:box-shadow .25s,transform .2s;
 }
-
-.youtube-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+.b-main:hover{box-shadow:0 8px 32px rgba(123,63,189,.7);transform:translateY(-2px);}
+.b-main svg{transition:transform .25s;}
+.b-main:hover svg{transform:translateX(3px);}
+.b-sec{
+  display:inline-flex;align-items:center;gap:8px;cursor:none;
+  font-size:.88rem;color:var(--ts);
+  text-decoration:none;font-weight:500;transition:color .2s;
 }
+.b-sec:hover{color:var(--p1);}
+.b-sec .arr{transition:transform .2s;}
+.b-sec:hover .arr{transform:translateX(4px);}
 
-    
-    .hero {
-  min-height: 80vh; /* ou 80vh */
-  padding-top: 80px;
-  padding-bottom: 20px; /* ajoute un peu d'air en bas si besoin */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  position: relative;
+/* Marquee */
+.marquee-wrap{
+  margin-top:52px;overflow:hidden;
+  border-top:1px solid rgba(176,127,224,.15);
+  padding:12px 0;width:100%;
 }
-
-.hero-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 2rem;
-  z-index: 1;
-  gap: 4rem; /* ajoute cet espace entre les 2 colonnes */
+.marquee{
+  display:flex;animation:mq 24s linear infinite;
+  white-space:nowrap;width:max-content;
 }
-
-.hero-left {
-  flex: 1;
-  text-align: center;
- }
-
-.hero-left h1 {
-  font-size: 3.5rem;
-  color: var(--primary);
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+.marquee span{
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ts);padding:0 22px;opacity:.7;
 }
+.marquee .star{color:var(--p1);opacity:1 !important;font-size:.85rem;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-.hero-left h2 {
-  font-size: 1.2rem;
-  color: var(--secondary);
-  margin-bottom: 2rem;
-  letter-spacing: 0.02em;
+/* pills removed */
+.dp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ── PARTICLE CANVAS ── */
+#ptcl{position:fixed;inset:0;z-index:0;pointer-events:none;}
+
+/* ── SCROLL CUE ── */
+.scroll-cue{
+  position:absolute;bottom:28px;left:56px;z-index:10;
+  display:flex;align-items:center;gap:10px;
+  color:var(--ts);opacity:.5;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;
 }
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.cta-btn {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-family: var(--font);
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-}
-
-.cta-btn:hover {
-  background-color: var(--accent);
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  margin-left: 3rem; /* ajoute un espace à gauche du logo */
-}
-
-.hero-logo {
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
-}
-@media (max-width: 600px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-left, .hero-right {
-    padding: 1rem 0;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .cta-btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-    
- .hero-description {
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-  </style>
+.sbar{width:32px;height:1px;background:linear-gradient(90deg,rgba(176,127,224,.5),transparent);}
+</style>
 </head>
 <body>
-  
 
-  
-  <header>
-    
-    <a href="/" class="logo">
-  <img src="Icon.svg" alt="Logo Wanderful Marketing" class="nav-logo">
-</a>
-    
-    <nav><a href="#a-propos">A PROPOS</a>
-      <a href="/contact">CONTACT</a>
-    </nav>
-  </header>
+<canvas id="ptcl"></canvas>
+<div id="cur"></div>
+<div id="cur-ring"></div>
 
-  <section class="hero">
-    <video autoplay muted loop playsinline class="background-video">
-  <source src="aura.mp4" type="video/mp4" />
-</video>
-   <div class="hero-content">
-  <div class="hero-left">
-    <h1>Digitalisez votre succès</h1>
-<h2 class="hero-description">
-  Wanderful conçoit des stratégies sur mesure pour vous accompagner à exploiter l’intelligence artificielle, optimiser votre marketing digital, attirer vos clients idéaux et booster votre croissance.
-</h2>
-    <div class="hero-buttons">
-      <button class="cta-btn">Expertises</button>
-      <a href="/contact" class="cta-btn">Contactez-nous</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <!-- Magic wand + star SVG — fidèle au concept du logo Wanderful -->
+    <div class="logo-wand">
+      <svg width="38" height="44" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Étoile / star en haut -->
+        <polygon points="19,2 21.5,9 29,9 23,13.5 25.5,21 19,16.5 12.5,21 15,13.5 9,9 16.5,9"
+          fill="#CFC3E8" stroke="#B07FE0" stroke-width="0.8"/>
+        <!-- Petits points magiques -->
+        <circle cx="7"  cy="6"  r="1.6" fill="#F4D6E3"/>
+        <circle cx="31" cy="8"  r="1.2" fill="#D6E6F5"/>
+        <circle cx="10" cy="16" r="1"   fill="#CFC3E8"/>
+        <!-- Baguette (wand) -->
+        <line x1="19" y1="21" x2="5" y2="42"
+          stroke="#3D1766" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Grip de la baguette -->
+        <line x1="8.5" y1="38" x2="5.5" y2="42"
+          stroke="#7B3FBD" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <!-- Texte : Wande en sombre + rful en violet, sous-titre Marketing Agency -->
+    <div>
+      <div style="display:flex;align-items:baseline;gap:0;">
+        <span class="logo-wande">Wande</span><span class="logo-rful">rful</span>
+      </div>
+      <span class="logo-sub">Marketing Agency</span>
     </div>
   </div>
-  <div class="hero-right">
-    <img src="Logo_Ver_1.svg" alt="Logo Wanderful Marketing" class="hero-logo">
-  </div>
-</div>
+  <ul>
+    <li><a href="#a-propos">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="/contact" class="nav-cta">Contactez-nous →</a></li>
+  </ul>
+</nav>
 
-  </section>
+<!-- HERO -->
+<section class="hero">
 
-  <section class="about-section" id="a-propos">
-  <div class="about-container">
-    <h3>Une agence à taille humaine, avec une vision ambitieuse</h3>
-    <p>
-      Wanderful Marketing — souvent prononcé à tort Wonderful Marketing et ortographié Wanderfull Marketing, est née de la passion commune de deux jeunes entrepreneures issues de <strong>HEC Lausanne</strong>, spécialisées en <strong>marketing digital</strong> et en <strong>stratégies d’intelligence artificielle</strong>. 
-    </p>
-    <p>
-      Le nom Wanderful s'inspire du mot anglais wander, qui signifie explorer. Il reflète notre approche du <strong>marketing</strong> : une exploration créative, curieuse et ouverte à l'inattendu, où allier <strong>stratégie</strong> et imagination peut générer des idées puissantes et inattendues.
-    </p>
-    <p>
-      En tant qu’agence 100 % féminine et engagée, notre mission est de mettre le <strong>pouvoir du digital</strong> au service des <strong>PME suisses</strong>, en les aidant à briller dans un écosystème numérique en constante évolution.
-    </p>
-    <p>
-      <strong>Notre valeur ajoutée ?</strong> Un mix unique de rigueur académique, de <strong>créativité</strong> et de technologies de pointe. Nous croyons en une communication authentique, inclusive et efficace, pour des résultats concrets et durables.
-    </p>
+  <!-- Ambient glow -->
+  <div class="robot-glow"></div>
+
+  <!-- Spline 3D Robot — background right -->
+  <div class="spline-bg">
+    <div class="spline-loader" id="loader">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Robot en cours…</div>
     </div>
-</section>
-
-
-<div class="magic-wrapper">
-  <div class="sparkles"></div>
-  <section class="magic-phrase">
-    <p>Casting Spells for Endless Visibility</p>
-  </section>
-</div>
-
-  <section class="trust-section">
-  <div class="trust-container">
-    <h3>Des compétences actuelles, une approche tournée vers l’impact</h3>
-    <p>
-      <strong>Nous sommes jeunes, mais pas novices.</strong> Grâce à notre formation à <strong>HEC Lausanne</strong> et notre veille constante sur les tendances digitales, nous créons des stratégies ultra-pertinentes et actuelles.
-    </p>
-    <p>
-      <strong>L’IA est au cœur de notre approche :</strong> analyse de données, génération de contenu optimisé, personnalisation marketing… Nous exploitons le potentiel de l’intelligence artificielle pour booster votre visibilité.
-    </p>
-    <p>
-      <strong>Proximité, transparence et réactivité :</strong> Chez Wanderful, chaque client compte. Nous privilégions une relation de confiance, avec un suivi personnalisé et des résultats mesurables.
-    </p>
-    <p>
-      Rejoignez les entreprises qui ont déjà fait le choix de l’innovation. Ensemble, transformons vos objectifs en succès.
-    </p>
+    <spline-viewer
+      id="spline"
+      url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+    ></spline-viewer>
+    <!-- Purple tint overlay -->
+    <div class="spline-tint"></div>
   </div>
-</section>
 
+  <!-- Gradient masks for text legibility -->
+  <div class="hero-mask"></div>
 
-  <section class="youtube-section">
-  <div class="youtube-container">
-    <iframe 
-      src="https://www.youtube.com/embed/GenAXqZLNLQ" 
-      title="Vidéo YouTube Wanderful Marketing Agency - Présentation du Business"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
+  <!-- Text content -->
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Agence certifiée Google Ads · Yvonand, Suisse
+      </div>
 
-    <section id="services-google-ads" style="padding: 60px 40px; background: #f9f7ff; text-align: center;">
-    <h2 style="color: #3D1766; font-size: 2rem; margin-bottom: 12px;">Nos services Google Ads</h2>
-    <p style="color: #555; max-width: 700px; margin: 0 auto 40px; font-size: 1.05rem;">
-      Agence certifiée Google Ads basée en Suisse, nous gérons les campagnes publicitaires de nos clients PME via l'API Google Ads pour maximiser leur retour sur investissement.
-    </p>
-    <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; max-width: 900px; margin: 0 auto;">
-      <div style="background: white; border-radius: 12px; padding: 28px 24px; flex: 1; min-width: 220px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
-        <div style="font-size: 2rem; margin-bottom: 10px;">🔍</div>
-        <h3 style="color: #3D1766; margin-bottom: 8px;">Campagnes Search</h3>
-        <p style="color: #666; font-size: 0.95rem;">Annonces textuelles ciblées sur les mots-clés de vos clients potentiels.</p>
+      <h1>
+        Digitalisez<br>votre succès
+        <span class="line2">Stratégie · IA · Performance</span>
+      </h1>
+
+      <p class="desc">
+        Wanderful conçoit des stratégies sur mesure pour exploiter
+        <b>l'intelligence artificielle</b>, optimiser votre marketing digital
+        et <b>booster votre croissance</b>.
+      </p>
+
+      <div class="btns">
+        <a href="#services" class="b-main">
+          Nos expertises
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/contact" class="b-sec">Nous contacter <span class="arr">→</span></a>
       </div>
-      <div style="background: white; border-radius: 12px; padding: 28px 24px; flex: 1; min-width: 220px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
-        <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
-        <h3 style="color: #3D1766; margin-bottom: 8px;">Performance Max</h3>
-        <p style="color: #666; font-size: 0.95rem;">Campagnes intelligentes multi-canaux pour toucher vos clients partout sur Google.</p>
-      </div>
-      <div style="background: white; border-radius: 12px; padding: 28px 24px; flex: 1; min-width: 220px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
-        <div style="font-size: 2rem; margin-bottom: 10px;">📊</div>
-        <h3 style="color: #3D1766; margin-bottom: 8px;">Reporting & Optimisation</h3>
-        <p style="color: #666; font-size: 0.95rem;">Rapports de performance via l'API Google Ads et optimisations continues.</p>
-      </div>
-      <div style="background: white; border-radius: 12px; padding: 28px 24px; flex: 1; min-width: 220px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
-        <div style="font-size: 2rem; margin-bottom: 10px;">🛒</div>
-        <h3 style="color: #3D1766; margin-bottom: 8px;">Shopping & Display</h3>
-        <p style="color: #666; font-size: 0.95rem;">Visibilité produit et campagnes display pour booster votre notoriété.</p>
+
+      <div class="marquee-wrap">
+        <div class="marquee">
+          <span>Casting Spells for Endless Visibility</span><span class="star"> ☆ </span>
+          <span>Google Ads · IA · Branding</span><span class="star"> ☆ </span>
+          <span>Vidéos & Drone · Sites Web</span><span class="star"> ☆ </span>
+          <span>HEC Lausanne</span><span class="star"> ☆ </span>
+          <span>PME Suisses · Croissance digitale</span><span class="star"> ☆ </span>
+          <span>Casting Spells for Endless Visibility</span><span class="star"> ☆ </span>
+          <span>Google Ads · IA · Branding</span><span class="star"> ☆ </span>
+          <span>Vidéos & Drone · Sites Web</span><span class="star"> ☆ </span>
+          <span>HEC Lausanne</span><span class="star"> ☆ </span>
+          <span>PME Suisses · Croissance digitale</span><span class="star"> ☆ </span>
+        </div>
       </div>
     </div>
-  </section>
-<footer>
-    © 2025 <span>Wanderful Marketing</span> (à ne pas confondre avec Wonderful Marketing) — Tous droits réservés
-    <br>
-    <a href="/privacy-policy.html">Politique de confidentialité</a> | <a href="/terms.html">Conditions d'utilisation</a>
-  </footer>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="sbar"></div>Scroll
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════ -->
+<section id="services" class="services-section">
+
+  <div class="svc-header">
+    <span class="svc-eyebrow">✦ Nos expertises</span>
+    <h2>Ce qu'on fait <em>pour vous</em></h2>
+    <p>Stratégie, contenu, vidéo, drone, web — tout ce dont vous avez besoin pour dominer le digital, sous un seul toit.</p>
+  </div>
+
+  <div class="svc-grid">
+
+    <div class="svc-card" data-color="#D9D6F2">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#EDE0FF"/><path d="M16 32l4-8 4 4 4-10 4 14" stroke="#7B3FBD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="16" r="3" fill="#7B3FBD"/></svg>
+      </div>
+      <div class="svc-num">01</div>
+      <h3>Google Ads</h3>
+      <p class="svc-short">Campagnes qui convertissent, ROI maximisé.</p>
+      <div class="svc-expand">
+        <p>Agence certifiée Google Ads, nous gérons vos campagnes Search, Shopping, Display et Performance Max via l'API Google Ads pour des résultats mesurables.</p>
+        <ul>
+          <li>Campagnes Search & Shopping</li>
+          <li>Performance Max multi-canaux</li>
+          <li>Reporting & optimisation continue</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#CFC3E8">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#EDE0FF"/><path d="M18 28c2-6 10-10 14-4" stroke="#7B3FBD" stroke-width="2.2" stroke-linecap="round"/><circle cx="24" cy="20" r="4" stroke="#7B3FBD" stroke-width="2"/><path d="M14 34c1-3 5-5 10-5s9 2 10 5" stroke="#B07FE0" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="svc-num">02</div>
+      <h3>Intelligence Artificielle</h3>
+      <p class="svc-short">L'IA au cœur de votre stratégie marketing.</p>
+      <div class="svc-expand">
+        <p>Analyse de données, génération de contenu optimisé, personnalisation marketing — nous exploitons le plein potentiel de l'IA pour booster votre visibilité.</p>
+        <ul>
+          <li>Automatisation marketing IA</li>
+          <li>Génération de contenu optimisé</li>
+          <li>Analyse prédictive & insights</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#F4D6E3">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#FDE8F0"/><rect x="14" y="18" width="20" height="14" rx="3" stroke="#B07FE0" stroke-width="2"/><path d="M19 18v-3a5 5 0 0 1 10 0v3" stroke="#7B3FBD" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="25" r="2" fill="#7B3FBD"/></svg>
+      </div>
+      <div class="svc-num">03</div>
+      <h3>Stratégie Digitale</h3>
+      <p class="svc-short">Une roadmap claire pour atteindre vos objectifs.</p>
+      <div class="svc-expand">
+        <p>Audit complet de votre présence digitale, définition de vos personas, création d'une stratégie sur mesure avec des KPIs mesurables et un plan d'action concret.</p>
+        <ul>
+          <li>Audit digital complet</li>
+          <li>Définition de personas & funnel</li>
+          <li>Roadmap & KPIs sur mesure</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#D6E6F5">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#E0F0FC"/><path d="M16 30V20l8-4 8 4v10l-8 4-8-4z" stroke="#7B3FBD" stroke-width="2" stroke-linejoin="round"/><path d="M16 20l8 4 8-4M24 24v10" stroke="#B07FE0" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="svc-num">04</div>
+      <h3>Branding & Identité</h3>
+      <p class="svc-short">Une marque qui vous ressemble et qui marque les esprits.</p>
+      <div class="svc-expand">
+        <p>Création ou refonte de votre identité visuelle, charte graphique, positionnement de marque — �/ur que votre image reflète parfaitement vos valeurs et attire vos clients idéaux.</p>
+        <ul>
+          <li>Logo & charte graphique</li>
+          <li>Positionnement de marque</li>
+          <li>Supports de communication</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#CFC3E8">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#EDE0FF"/><path d="M14 34c2-8 6-14 10-14s8 6 10 14" stroke="#7B3FBD" stroke-width="2" stroke-linecap="round"/><path d="M18 26c1-4 3-7 6-7s5 3 6 7" stroke="#B07FE0" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="18" r="2.5" fill="#7B3FBD"/></svg>
+      </div>
+      <div class="svc-num">05</div>
+      <h3>Création de Contenu</h3>
+      <p class="svc-short">Du contenu qui engage, convertit et fidélise.</p>
+      <div class="svc-expand">
+        <p>Copywriting, posts réseaux sociaux, newsletters, articles de blog optimisés SEO — du contenu authentique et percutant qui parle à votre audience cible.</p>
+        <ul>
+          <li>Social media & copywriting</li>
+          <li>Articles SEO & newsletters</li>
+          <li>Calendrier éditorial</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#D9D6F2">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#EDE0FF"/><circle cx="24" cy="24" r="7" stroke="#7B3FBD" stroke-width="2"/><path d="M24 11v4M24 33v4M11 24h4M33 24h4" stroke="#B07FE0" stroke-width="2" stroke-linecap="round"/><path d="M15.5 15.5l2.8 2.8M29.7 29.7l2.8 2.8M15.5 32.5l2.8-2.8M29.7 18.3l2.8-2.8" stroke="#CFC3E8" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="svc-num">06</div>
+      <h3>SEO & Visibilité</h3>
+      <p class="svc-short">Première page Google, durablement.</p>
+      <div class="svc-expand">
+        <p>Optimisation on-page et off-page, stratégie de backlinks, audit technique — pour que vos clients vous trouvent naturellement sur Google, sans payer chaque clic.</p>
+        <ul>
+          <li>Audit & optimisation SEO</li>
+          <li>Stratégie de contenu organique</li>
+          <li>Netlinking & autorité de domaine</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#F4D6E3">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#FDE8F0"/><rect x="12" y="17" width="20" height="14" rx="3" stroke="#B07FE0" stroke-width="2"/><path d="M32 21l5-3v12l-5-3" stroke="#7B3FBD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="24" r="3" stroke="#7B3FBD" stroke-width="1.8"/></svg>
+      </div>
+      <div class="svc-num">07</div>
+      <h3>Vidéos Publicitaires</h3>
+      <p class="svc-short">Des vidéos qui captivent, racontent et convertissent.</p>
+      <div class="svc-expand">
+        <p>Conception, tournage et montage de vidéos publicitaires professionnelles pour vos réseaux sociaux, campagnes Google et landing pages — pour un impact visuel fort.</p>
+        <ul>
+          <li>Spots publicitaires & réseaux sociaux</li>
+          <li>Vidéos produit & corporate</li>
+          <li>Montage & motion design</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#D6E6F5">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#E0F0FC"/><path d="M24 14c0 0-2 3-6 3s-6-3-6-3v7c0 5 5 9 12 10 7-1 12-5 12-10v-7s-2 3-6 3-6-3-6-3z" stroke="#7B3FBD" stroke-width="1.8" stroke-linejoin="round"/><circle cx="24" cy="18" r="2" fill="#B07FE0"/><path d="M20 30l2 2 6-6" stroke="#7B3FBD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-num">08</div>
+      <h3>Prises de Vue Drone</h3>
+      <p class="svc-short">Des perspectives aériennes à couper le souffle.</p>
+      <div class="svc-expand">
+        <p>Nos pilotes certifiés capturent vos bâtiments, événements, paysages ou chantiers avec un drone professionnel — pour des visuels uniques qui marquent les esprits.</p>
+        <ul>
+          <li>Photos & vidéos aériennes HD</li>
+          <li>Événements, biens immobiliers & industrie</li>
+          <li>Pilotes FOCA certifiés, Suisse romande</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="svc-card" data-color="#CFC3E8">
+      <div class="svc-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#EDE0FF"/><rect x="11" y="15" width="26" height="18" rx="3" stroke="#7B3FBD" stroke-width="2"/><path d="M18 33v3M30 33v3M15 36h18" stroke="#B07FE0" stroke-width="2" stroke-linecap="round"/><path d="M15 22h6M15 26h10" stroke="#CFC3E8" stroke-width="2" stroke-linecap="round"/><rect x="25" y="20" width="8" height="7" rx="1.5" fill="#B07FE0" opacity=".5"/></svg>
+      </div>
+      <div class="svc-num">09</div>
+      <h3>Création de Sites Web</h3>
+      <p class="svc-short">Votre vitrine digitale, rapide, belle et efficace.</p>
+      <div class="svc-expand">
+        <p>Sites vitrines, e-commerce, landing pages ou refonte — nous créons des sites web sur mesure, optimisés mobile et SEO, qui transforment vos visiteurs en clients.</p>
+        <ul>
+          <li>Sites vitrine & e-commerce</li>
+          <li>Landing pages à fort taux de conversion</li>
+          <li>Performance, SEO & design responsive</li>
+        </ul>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <!-- CTA bottom -->
+  <div class="svc-bottom-cta">
+    <p>Vous ne savez pas par où commencer ?</p>
+    <a href="/contact" class="b-main" style="cursor:default;">
+      Parlons de votre projet
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════
+     AUDIT GRATUIT SECTION
+════════════════════════════════════════ -->
+<section class="audit-section" id="audit">
+  <div class="audit-glow"></div>
+  <div class="audit-inner">
+
+    <div class="audit-badge">
+      <span class="audit-badge-dot"></span>
+      Offre limitée · 100% gratuit · Sans engagement
+    </div>
+
+    <h2 class="audit-title">
+      On analyse votre présence digitale<br>
+      <em>gratuitement.</em>
+    </h2>
+
+    <p class="audit-desc">
+      En 30 minutes, nos experts passent au crible votre site web, vos campagnes Google Ads, votre SEO et vos réseaux sociaux — et vous livrent un rapport clair avec les <strong>3 actions prioritaires</strong> pour booster votre croissance.
+    </p>
+
+    <div class="audit-perks">
+      <div class="audit-perk">
+        <div class="perk-icon">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#EDE0FF"/><path d="M10 16l4 4 8-8" stroke="#7B3FBD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Audit SEO & site web</span>
+      </div>
+      <div class="audit-perk">
+        <div class="perk-icon">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#EDE0FF"/><path d="M10 16l4 4 8-8" stroke="#7B3FBD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Analyse Google Ads</span>
+      </div>
+      <div class="audit-perk">
+        <div class="perk-icon">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#EDE0FF"/><path d="M10 16l4 4 8-8" stroke="#7B3FBD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Rapport & recommandations</span>
+      </div>
+      <div class="audit-perk">
+        <div class="perk-icon">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#EDE0FF"/><path d="M10 16l4 4 8-8" stroke="#7B3FBD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Zéro engagement</span>
+      </div>
+    </div>
+
+    <a href="/contact" class="audit-cta">
+      <span class="audit-cta-sparkle">✦</span>
+      Demander mon audit gratuit
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <p class="audit-note">Réponse sous 24h · Disponible pour les PME de Suisse romande</p>
+
+  </div>
+</section>
+
+<style>
+/* ════ SERVICES SECTION ════ */
+.services-section{
+  position:relative;z-index:2;
+  background:linear-gradient(180deg,#D9D6F2 0%,#F4F2FF 40%,#EDE8FF 100%);
+  padding:100px 56px 80px;
+}
+
+.svc-header{
+  text-align:center;max-width:600px;margin:0 auto 64px;
+}
+.svc-eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--p1);display:block;margin-bottom:16px;
+}
+.svc-header h2{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(2rem,3.5vw,3rem);font-weight:800;
+  color:var(--p2);letter-spacing:-.02em;line-height:1.1;margin-bottom:14px;
+}
+.svc-header h2 em{
+  font-style:italic;font-weight:300;color:var(--p1);
+}
+.svc-header p{
+  font-size:1rem;color:var(--ts);line-height:1.7;font-weight:400;
+}
+
+/* Grid */
+.svc-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1100px;margin:0 auto;
+}
+
+/* Card */
+.svc-card{
+  background:#fff;
+  border:1px solid rgba(207,195,232,.4);
+  border-radius:18px;
+  padding:28px 26px 24px;
+  cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),
+             box-shadow .35s ease,
+             background .35s ease;
+  /* Start slightly below, invisible — JS will trigger */
+  opacity:0;transform:translateY(30px) scale(0.96);
+}
+.svc-card.visible{
+  opacity:1;transform:translateY(0) scale(1);
+}
+.svc-card:hover{
+  transform:translateY(-6px) scale(1.03) !important;
+  box-shadow:0 20px 50px rgba(123,63,189,.15),0 4px 16px rgba(123,63,189,.08);
+  background:#FAF7FF;
+  border-color:rgba(123,63,189,.3);
+}
+/* Colour strip at top on hover */
+.svc-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--p1),var(--cy));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s ease;border-radius:18px 18px 0 0;
+}
+.svc-card:hover::before{transform:scaleX(1);}
+
+/* Icon */
+.svc-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.svc-icon svg{width:48px;height:48px;}
+.svc-card:hover .svc-icon{transform:scale(1.15) rotate(-4deg);}
+
+/* Number */
+.svc-num{
+  position:absolute;top:22px;right:24px;
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  color:rgba(123,63,189,.2);
+}
+.svc-card:hover .svc-num{color:rgba(123,63,189,.45);}
+
+h3{
+  font-size:1.08rem;font-weight:700;color:var(--p2);
+  margin-bottom:8px;letter-spacing:-.01em;
+}
+.svc-short{
+  font-size:.88rem;color:var(--ts);line-height:1.55;font-weight:400;
+}
+
+/* Expand content — hidden by default */
+.svc-expand{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease, opacity .3s ease, margin .3s ease;
+  opacity:0;margin-top:0;
+}
+.svc-card:hover .svc-expand{
+  max-height:200px;opacity:1;margin-top:14px;
+}
+.svc-expand p{
+  font-size:.82rem;color:var(--ts);line-height:1.6;margin-bottom:10px;
+}
+.svc-expand ul{
+  list-style:none;display:flex;flex-direction:column;gap:4px;
+}
+.svc-expand ul li{
+  font-size:.78rem;color:var(--p2);font-weight:500;
+  padding-left:14px;position:relative;
+}
+.svc-expand ul li::before{
+  content:'✦';position:absolute;left:0;
+  font-size:.55rem;color:var(--p1);top:2px;
+}
+
+/* CTA inside card */
+.svc-cta{
+  display:inline-block;
+  margin-top:14px;font-size:.78rem;font-weight:700;
+  color:var(--p1);letter-spacing:.04em;
+  text-decoration:none;
+  opacity:0;transform:translateY(4px);
+  transition:opacity .25s ease .1s,transform .25s ease .1s;
+}
+.svc-card:hover .svc-cta{opacity:1;transform:translateY(0);}
+
+/* Stagger animation delays */
+.svc-card:nth-child(1){transition-delay:.05s;}
+.svc-card:nth-child(2){transition-delay:.12s;}
+.svc-card:nth-child(3){transition-delay:.19s;}
+.svc-card:nth-child(4){transition-delay:.26s;}
+.svc-card:nth-child(5){transition-delay:.33s;}
+.svc-card:nth-child(6){transition-delay:.40s;}
+.svc-card:nth-child(7){transition-delay:.47s;}
+.svc-card:nth-child(8){transition-delay:.54s;}
+.svc-card:nth-child(9){transition-delay:.61s;}
+
+/* Bottom CTA */
+.svc-bottom-cta{
+  text-align:center;margin-top:60px;
+  display:flex;flex-direction:column;align-items:center;gap:18px;
+}
+.svc-bottom-cta p{
+  font-size:1rem;color:var(--ts);font-weight:400;
+}
+</style>
+
+<style>
+/* ════ AUDIT GRATUIT SECTION ════ */
+.audit-section{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#3D1766 0%,#5A2898 45%,#7B3FBD 100%);
+  padding:100px 56px 90px;
+  text-align:center;
+}
+
+/* Soft ambient glow blobs */
+.audit-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(244,214,227,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 40%, rgba(214,230,245,.15) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(126,200,220,.12) 0%, transparent 55%);
+}
+
+.audit-inner{
+  position:relative;z-index:2;
+  max-width:720px;margin:0 auto;
+}
+
+/* Badge */
+.audit-badge{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:6px;padding:7px 16px;
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+}
+.audit-badge-dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+  background:#D4B0F8;box-shadow:0 0 8px #D4B0F8;
+  animation:bdot 2s ease-in-out infinite;
+}
+
+/* Title */
+.audit-title{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(2rem,3.8vw,3.2rem);
+  font-weight:800;line-height:1.12;letter-spacing:-.02em;
+  color:#fff;margin-bottom:22px;
+}
+.audit-title em{
+  font-style:italic;font-weight:300;
+  color:#D4B0F8;
+}
+
+/* Description */
+.audit-desc{
+  font-size:1.05rem;line-height:1.75;
+  color:rgba(255,255,255,.75);
+  margin-bottom:44px;font-weight:400;
+}
+.audit-desc strong{color:#fff;font-weight:600;}
+
+/* Perks row */
+.audit-perks{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:16px 28px;
+  margin-bottom:44px;
+}
+.audit-perk{
+  display:flex;align-items:center;gap:10px;
+  font-size:.85rem;color:rgba(255,255,255,.85);font-weight:500;
+}
+.perk-icon{width:28px;height:28px;flex-shrink:0;}
+.perk-icon svg{width:28px;height:28px;}
+
+/* CTA button */
+.audit-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 40px;border-radius:12px;
+  background:#fff;
+  color:var(--p2);
+  font-family:'Outfit',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.03em;
+  text-decoration:none;cursor:pointer;
+  box-shadow:0 8px 40px rgba(0,0,0,.25),0 0 0 0 rgba(255,255,255,.3);
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),
+             box-shadow .25s ease;
+}
+.audit-cta:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 14px 50px rgba(0,0,0,.3),0 0 0 6px rgba(255,255,255,.15);
+}
+.audit-cta-sparkle{
+  font-size:.9rem;color:var(--p1);
+  animation:spin-slow 4s linear infinite;
+  display:inline-block;
+}
+@keyframes spin-slow{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+
+/* Note */
+.audit-note{
+  margin-top:20px;font-size:.75rem;
+  color:rgba(255,255,255,.45);letter-spacing:.06em;
+}
+
+</style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const wrapper = document.querySelector(".magic-wrapper");
-
-    function randomOutsideCenter() {
-      return Math.random() < 0.5
-        ? Math.random() * 30
-        : 70 + Math.random() * 30;
-    }
-
-    for (let i = 0; i < 10; i++) {
-      const sparkle = document.createElement("div");
-      sparkle.className = "sparkle";
-      sparkle.textContent = "☆";
-
-      sparkle.style.top = randomOutsideCenter() + "%";
-      sparkle.style.left = randomOutsideCenter() + "%";
-      sparkle.style.animationDelay = Math.random() * 5 + "s";
-
-      wrapper.appendChild(sparkle);
+/* ── SERVICES SCROLL REVEAL + LINKS ── */
+const svcLinks = [
+  'services/google-ads.html',
+  'services/intelligence-artificielle.html',
+  'services/strategie-digitale.html',
+  'services/branding.html',
+  'services/creation-contenu.html',
+  'services/seo.html',
+  'services/videos-publicitaires.html',
+  'services/drone.html',
+  'services/creation-sites-web.html'
+];
+const cards = document.querySelectorAll('.svc-card');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('visible');
     }
   });
+}, { threshold: 0.15 });
+cards.forEach((c, i) => {
+  observer.observe(c);
+  // Add "Découvrir →" link
+  if(svcLinks[i]) {
+    const lnk = document.createElement('a');
+    lnk.href = svcLinks[i];
+    lnk.className = 'svc-cta';
+    lnk.innerHTML = 'Découvrir →';
+    c.appendChild(lnk);
+    // Make whole card clickable
+    c.style.cursor = 'pointer';
+    c.addEventListener('click', (e) => {
+      if(!e.target.closest('a')) window.location.href = svcLinks[i];
+    });
+  }
+});
 </script>
 
-  <script src="//code.tidio.co/jd2rqpixzagoq19ereaaqzsk8gvmyitn.js" async></script>
+<script>
+/* ── SPLINE LOAD ── */
+const splineEl=document.getElementById('spline');
+const loader=document.getElementById('loader');
+splineEl.addEventListener('load',()=>setTimeout(()=>loader.classList.add('hide'),500));
+setTimeout(()=>loader.classList.add('hide'),9000);
 
-  
+/* ── PARTICLES ── */
+const cv=document.getElementById('ptcl'),ctx=cv.getContext('2d');
+let W,H;
+function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+rsz();window.addEventListener('resize',rsz);
+const cols=[[123,63,189],[126,200,220],[176,127,224],[90,40,152]];
+const pts=Array.from({length:55},()=>({
+  x:Math.random()*W||Math.random()*1400,
+  y:Math.random()*H||Math.random()*900,
+  vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,
+  r:Math.random()*1.3+.4,
+  c:cols[Math.floor(Math.random()*cols.length)],
+  a:Math.random()*.22+.06,ph:Math.random()*Math.PI*2
+}));
+let mx=700,my=400;
+function draw(){
+  cv.width=W;
+  pts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;p.ph+=.01;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);
+    if(d<100){const f=(100-d)/100*.25;p.vx+=dx/d*f;p.vy+=dy/d*f;}
+    p.vx*=.997;p.vy*=.997;
+    const sp=Math.hypot(p.vx,p.vy);if(sp>1){p.vx=p.vx/sp;p.vy=p.vy/sp;}
+    const a=p.a*(.6+.4*Math.sin(p.ph));
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${p.c},${a})`;ctx.fill();
+  });
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.hypot(dx,dy);
+    if(d<88){
+      ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+      ctx.strokeStyle=`rgba(176,127,224,${(1-d/88)*.08})`;ctx.lineWidth=.5;ctx.stroke();
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
 
+/* ── CURSOR ── */
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  cx=e.clientX;cy=e.clientY;
+  cur.style.left=cx+'px';cur.style.top=cy+'px';
+  mx=cx;my=cy;
+});
+(function lp(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lp);})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+});
+
+/* ── SCROLL PARALLAX ── */
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY;
+  document.querySelector('.spline-bg').style.transform=`translateY(${s*.08}px)`;
+  document.querySelector('.hero-content').style.transform=`translateY(${s*.05}px)`;
+});
+</script>
 </body>
 </html>
