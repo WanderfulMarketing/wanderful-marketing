@@ -265,15 +265,39 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:860px){
-      header{padding:0 24px;}
-      .page-wrap{padding:90px 20px 60px;}
-      .contact-grid{grid-template-columns:1fr;}
+      header{padding:0 20px;}
+      .page-wrap{padding:88px 16px 60px;}
+      .contact-grid{grid-template-columns:1fr;gap:20px;}
       .form-row{grid-template-columns:1fr;}
-      .booking-section{grid-column:1;}
+      .booking-section{grid-column:1;margin-top:0;padding:28px 20px;}
+      .booking-header{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:20px;}
+      .booking-badges{gap:8px;}
+      .booking-badge{font-size:.7rem;padding:5px 10px;}
     }
-    @media(max-width:520px){
-      .contact-card{padding:24px 18px;}
-      .booking-section{padding:24px 16px;}
+    @media(max-width:600px){
+      .contact-hero{margin-bottom:40px;}
+      .contact-hero h1{font-size:1.7rem;}
+      .contact-hero p{font-size:.92rem;}
+      .info-pills{gap:8px;}
+      .pill{font-size:.75rem;padding:6px 12px;}
+      .contact-card{padding:22px 16px;}
+      .booking-section{padding:22px 16px;}
+      .booking-title-wrap h2{font-size:1.15rem;}
+      .booking-body{padding:24px 16px;gap:24px;}
+      .book-steps{gap:16px;flex-direction:column;align-items:center;}
+      .book-step{min-width:unset;max-width:100%;width:100%;padding:0;
+        display:flex;align-items:flex-start;gap:14px;text-align:left;}
+      .step-circle{margin:0;flex-shrink:0;}
+      .step-arrow{display:none;}
+      .book-cta-btn{width:100%;justify-content:center;padding:16px 24px;font-size:.95rem;}
+      .book-note{font-size:.72rem;}
+      .info-item{padding:14px;}
+      .info-icon{width:34px;height:34px;}
+    }
+    @media(max-width:380px){
+      header{padding:0 14px;}
+      .page-wrap{padding:80px 12px 48px;}
+      nav a{margin-left:1.2rem;font-size:.75rem;}
     }
   </style>
 </head>
