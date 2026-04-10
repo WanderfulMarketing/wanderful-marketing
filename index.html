@@ -400,6 +400,58 @@ h1 .line2{
 </section>
 
 <!-- ════════════════════════════════════════
+     CLIENTS SECTION
+════════════════════════════════════════ -->
+<section class="clients-section">
+  <p class="clients-label">Ils nous font confiance</p>
+  <div class="clients-logos">
+
+    <!-- Carewell logo (SVG vectoriel haute qualité) -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 52" role="img" aria-label="Carewell">
+      <!-- Icon: 4 rounded petals -->
+      <g transform="translate(26,26)">
+        <ellipse cx="0"  cy="-10" rx="6"  ry="10" fill="#3DC8BE"/>
+        <ellipse cx="0"  cy="10"  rx="6"  ry="10" fill="#3DC8BE"/>
+        <ellipse cx="-10" cy="0"  rx="10" ry="6"  fill="#3DC8BE"/>
+        <ellipse cx="10"  cy="0"  rx="10" ry="6"  fill="#3DC8BE"/>
+      </g>
+      <!-- Carewell text -->
+      <text x="56" y="33" font-family="'DM Sans','Inter','Helvetica Neue',sans-serif"
+            font-size="24" font-weight="600" fill="#1B2D3E" letter-spacing="-0.4">Carewell</text>
+    </svg>
+
+  </div>
+</section>
+
+<style>
+/* ════ CLIENTS SECTION ════ */
+.clients-section{
+  background:#fff;
+  padding:44px 56px;
+  text-align:center;
+  border-top:1px solid rgba(207,195,232,.2);
+  border-bottom:1px solid rgba(207,195,232,.2);
+}
+.clients-label{
+  font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(123,63,189,.45);margin-bottom:28px;
+}
+.clients-logos{
+  display:flex;justify-content:center;align-items:center;gap:60px;flex-wrap:wrap;
+}
+.clients-logos svg{
+  height:38px;width:auto;
+  opacity:.65;
+  transition:opacity .3s ease;
+}
+.clients-logos svg:hover{opacity:1;}
+@media(max-width:600px){
+  .clients-section{padding:32px 20px;}
+  .clients-logos svg{height:30px;}
+}
+</style>
+
+<!-- ════════════════════════════════════════
      SERVICES SECTION
 ════════════════════════════════════════ -->
 <section id="services" class="services-section">
@@ -1016,7 +1068,7 @@ window.addEventListener('scroll',()=>{
   nav a{font-size:.75rem;letter-spacing:.04em;}
 }
 @media(max-width:600px){
-  nav ul li:not(:last-child){display:none;}
+  nav li:not(:last-child){display:none;}
   nav{padding:12px 16px;}
   .nav-cta{padding:8px 16px;font-size:.8rem !important;}
 }
