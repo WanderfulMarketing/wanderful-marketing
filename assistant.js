@@ -81,6 +81,8 @@
 
   .wfc-msg{max-width:82%;padding:11px 14px;font-size:.9rem;line-height:1.5;border-radius:14px;white-space:pre-wrap;word-wrap:break-word;}
   .wfc-bot{align-self:flex-start;background:#fff;color:${C.p2};border:1px solid rgba(176,127,224,.25);border-bottom-left-radius:4px;}
+  .wfc-bot a{color:${C.p1};font-weight:600;text-decoration:underline;}
+  .wfc-bot strong{font-weight:700;color:${C.p2};}
   .wfc-user{align-self:flex-end;background:linear-gradient(135deg,${C.p1},${C.p3});color:#fff;border-bottom-right-radius:4px;}
 
   .wfc-typing{align-self:flex-start;background:#fff;border:1px solid rgba(176,127,224,.25);border-radius:14px;border-bottom-left-radius:4px;padding:13px 16px;display:flex;gap:5px;}
@@ -172,10 +174,24 @@
   let greeted = false;
 
   // ── Helpers UI ─────────────────────────────────────────────
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // Rendu markdown minimal et sûr : liens, gras, sauts de ligne.
+  function mdToHtml(text) {
+    let t = escapeHtml(text);
+    t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\n/g, "<br>");
+    return t;
+  }
+
   function addMsg(text, who) {
     const el = document.createElement("div");
     el.className = "wfc-msg " + (who === "user" ? "wfc-user" : "wfc-bot");
-    el.textContent = text;
+    if (who === "user") el.textContent = text;
+    else el.innerHTML = mdToHtml(text);
     body.appendChild(el);
     body.scrollTop = body.scrollHeight;
     return el;
