@@ -9,6 +9,7 @@
    2. Ajoute ce fichier au repo (assistant.js), puis avant </body>
       de chaque page :  <script src="/assistant.js" defer></script>
    ============================================================ */
+/* Wanderful Assistant — v1.0 */
 (function () {
   "use strict";
 
